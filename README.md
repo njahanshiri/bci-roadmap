@@ -4,12 +4,12 @@ Brain-computer interface projects, organized by type of brain data.
 
 | Folder | Data |
 |---|---|
-| [eeg/](eeg/) | EEG: electrical activity at the scalp |
-| [emg-eog-ecg/](emg-eog-ecg/) | Muscles, eyes, heart |
-| [fnirs/](fnirs/) | Blood oxygenation, measured with light |
-| [meg/](meg/) | Magnetic fields from brain currents |
-| [ecog-seeg/](ecog-seeg/) | Electrical activity on or inside the brain |
-| [spikes-lfp/](spikes-lfp/) | Individual neurons |
+| [eeg/](projects/eeg/) | EEG: electrical activity at the scalp |
+| [emg-eog-ecg/](projects/emg-eog-ecg/) | Muscles, eyes, heart |
+| [fnirs/](projects/fnirs/) | Blood oxygenation, measured with light |
+| [meg/](projects/meg/) | Magnetic fields from brain currents |
+| [ecog-seeg/](projects/ecog-seeg/) | Electrical activity on or inside the brain |
+| [spikes-lfp/](projects/spikes-lfp/) | Individual neurons |
 
 ## Start
 
