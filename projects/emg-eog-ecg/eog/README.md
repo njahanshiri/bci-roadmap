@@ -168,6 +168,8 @@ These are foundational papers; I did not verify citation counts.
 
 ## 9. Public datasets
 
+Full specifications for each dataset, and tables of published results on them, are in [DATASETS.md](DATASETS.md).
+
 | Dataset | Content | Size | Link |
 |---|---|---|---|
 | Sleep-EDF Expanded | PSG with EEG, EOG and chin EMG at 100 Hz, plus hypnograms | 197 nights | [PhysioNet](https://physionet.org/content/sleep-edfx/1.0.0/) |

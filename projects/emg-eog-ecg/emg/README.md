@@ -188,6 +188,8 @@ These are field-defining works. Citation counts are left out because I could not
 
 ## 9. Public datasets
 
+Full specifications for each dataset, and tables of published results on them, are in [DATASETS.md](DATASETS.md).
+
 | Dataset | Content | Size | Link |
 |---|---|---|---|
 | Ninapro DB1–DB10 | Hand gestures, sEMG + kinematics/force; includes amputees | DB2: 40 subjects, 49 movements, 12 Delsys at 2 kHz; DB9: 77 subjects | [ninapro.hevs.ch](https://ninapro.hevs.ch/) |

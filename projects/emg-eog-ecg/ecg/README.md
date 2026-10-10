@@ -204,6 +204,8 @@ I could not verify citation counts, so none are given.
 
 ## 9. Public datasets
 
+Full specifications for each dataset, and tables of published results on them, are in [DATASETS.md](DATASETS.md).
+
 | Dataset | Content | Size | Link |
 |---|---|---|---|
 | MIT-BIH Arrhythmia | 2-channel Holter, 360 Hz, 11-bit; ~110k beat labels | 48 half-hour records / 47 subjects | [PhysioNet](https://archive.physionet.org/physiobank/database/mitdb/) |
