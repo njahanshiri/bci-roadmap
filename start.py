@@ -1,11 +1,6 @@
-"""Start here: measures your first brain signal and shows your roadmap progress."""
-import re
-from pathlib import Path
-
+"""Start here: measures your first brain signal."""
 import mne
 from mne.datasets import eegbci
-
-ROOT = Path(__file__).parent
 
 
 def first_signal():
@@ -24,22 +19,6 @@ def first_signal():
     print(f"  Alpha power is {ratio:.1f}x higher with eyes closed: the Berger effect, first seen in 1929.")
 
 
-def progress():
-    print("\nRoadmap progress")
-    next_up = []
-    for readme in sorted(ROOT.glob("[0-9][0-9]-*/README.md")):
-        text = readme.read_text()
-        done = re.findall(r"^- \[x\] ", text, re.M | re.I)
-        todo = re.findall(r"^- \[ \] (.+)", text, re.M)
-        print(f"  {readme.parent.name:<36} {len(done):>3}/{len(done) + len(todo)}")
-        if todo:
-            next_up.append(f"{readme.parent.name}: {todo[0]}")
-    print("\nNext up (00-02 run in parallel):")
-    for item in next_up[:3]:
-        print(f"  - {item}")
-
-
 if __name__ == "__main__":
     print("Your first brain signal (PhysioNet subject 1, channels O1/Oz/O2)")
     first_signal()
-    progress()
