@@ -34,6 +34,7 @@
 - [ ] Why source estimates from few electrodes are uncertain
 
 ## Build
+- [ ] Work through the starter notebook [01_load_and_explore_eeg.ipynb](01_load_and_explore_eeg.ipynb): raw EEG, spectrum, filtering, epochs, motor imagery ERD
 - [ ] Notebook: full preprocessing pipeline on one subject (filter → bad channels → ICA → epochs), with before/after plots
 - [ ] Script: run the same pipeline on 10 subjects and write a short data-quality report
 
