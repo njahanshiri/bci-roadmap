@@ -1,6 +1,6 @@
-# Part 00: Math and statistics
+# 00: Math and statistics
 
-**When:** weeks 1–4, alongside Parts 01 and 02.
+**Shared by all data types.** **When:** weeks 1–4, alongside 01 and 02.
 Skim what you already know as an AI engineer. The statistics section is the one most ML people are missing.
 
 ## Linear algebra for spatial filters

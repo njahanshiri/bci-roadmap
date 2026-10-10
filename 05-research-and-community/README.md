@@ -1,6 +1,6 @@
-# Part 09: Research, ethics, and community
+# 05: Research, ethics, and community
 
-**When:** all 5 years, starting in week 1.
+**Shared by all data types.** **When:** all 5 years, starting in week 1.
 
 ## Reading and research
 - [ ] How to read a BCI paper: methods first, and check how they split the data
@@ -11,8 +11,14 @@
 
 ## Open science
 - [ ] Reproducible code: pinned environments, fixed seeds, one-command runs
-- [ ] Sharing data in BIDS; licenses for code and data
+- [ ] BIDS for every data type (EEG-BIDS, MEG-BIDS, iEEG-BIDS, fNIRS-BIDS); licenses for code and data
 - [ ] Preregistration and reporting negative results
+
+## The field
+- [ ] Clinical uses: ALS and locked-in syndrome, spinal cord injury, stroke rehabilitation
+- [ ] Stimulation and bidirectional BCIs: deep brain stimulation, functional electrical stimulation, sensory feedback
+- [ ] Companies and their approaches: Neuralink, Synchron, Paradromics, Blackrock Neurotech, Precision Neuroscience
+- [ ] Regulation: medical device approval (e.g. FDA) and clinical trials
 
 ## Ethics
 - [ ] Informed consent and ethics board (IRB) approval

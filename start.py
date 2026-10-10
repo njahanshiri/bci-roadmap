@@ -34,7 +34,7 @@ def progress():
         print(f"  {readme.parent.name:<36} {len(done):>3}/{len(done) + len(todo)}")
         if todo:
             next_up.append(f"{readme.parent.name}: {todo[0]}")
-    print("\nNext up (Parts 00-02 run in parallel):")
+    print("\nNext up (00-02 run in parallel):")
     for item in next_up[:3]:
         print(f"  - {item}")
 

@@ -1,6 +1,6 @@
-# Part 02: Signal processing
+# 02: Signal processing
 
-**When:** months 0–3.
+**Shared by all data types.** **When:** months 0–3.
 
 ## Sampling
 - [ ] Sampling rate, Nyquist frequency, aliasing
