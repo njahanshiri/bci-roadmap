@@ -115,7 +115,7 @@ Sources: [PhysioNet](https://physionet.org/content/ptb-xl/1.0.3/), [Wagner 2020]
 | Resolution | 16-bit, 1 µV/LSB |
 | Record length | 10 s |
 | Records | **21,799 in v1.0.3; 21,837 in the paper and v1.0.1** |
-| Labels | 71 SCP-ECG statements: 44 diagnostic, 19 form, 12 rhythm. Diagnostic statements group into 5 superclasses and subclasses. Annotated by up to two cardiologists. 67.13% are manual interpretations and 31.2% are device-generated ([Wagner](https://pmc.ncbi.nlm.nih.gov/articles/PMC7248071/)). ⚠ Subclass count is 23 in Strodthoff's text but 24 in his Table I; MERL uses 23 |
+| Labels | 71 SCP-ECG statements: 44 diagnostic, 19 form, 12 rhythm. Diagnostic statements group into 5 superclasses and subclasses. Annotated by up to two cardiologists. 67.13% are manual interpretations and 31.2% are device-generated ([Wagner](https://pmc.ncbi.nlm.nih.gov/articles/PMC7248071/)). ⚠ Subclass count is 24 in Wagner 2020 and in Strodthoff's Sec. II and Table I, but 23 in Strodthoff's Sec. IV; MERL uses 23 |
 | Class balance (superclass) | NORM 9,514; MI 5,469; STTC 5,235; CD 4,898; HYP 2,649. About 12k ECGs have no form label (Strodthoff) |
 | Size | 3.0 GB uncompressed; 1.7 GB zip |
 | Format | WFDB |
@@ -142,7 +142,7 @@ Sources: [challenge page](http://2018.icbeb.org/Challenge.html), [Perez Alday 20
 | Size | Not reported |
 | Format | MATLAB `.mat` plus REFERENCE.csv |
 | Access & license | Training set free to download; license not stated |
-| Standard splits | Hidden test set. Challenge 2021 reused it as 1,463 validation and 1,463 test records |
+| Standard splits | Hidden test set. Challenges 2020 and 2021 reused it as 1,463 validation and 1,463 test records (⚠ 2,926 in total, not 2,954) |
 | Known issues | Not reported |
 
 ## Chapman-Shaoxing
@@ -220,7 +220,7 @@ Sources: [C1](https://physionet.org/content/challenge-2017/1.0.0/), [Clifford 20
 | Record length | 9 s to just over 60 s; mean 32.5 s, median 30 s |
 | Records | 8,528 training; 3,658 hidden test; 12,186 total |
 | Labels | Normal, AF, Other rhythm, Too noisy. Originally one expert per record. The 1,129 most disputed were relabeled by 8 experts; κ = 0.245 [Clifford] |
-| Class balance (training) | Normal 5,154; AF 771; Other 2,557; Noisy 46 |
+| Class balance (training) | Normal 5,154; AF 771; Other 2,557; Noisy 46 (original REFERENCE-v0 labels, as on the project page). Final REFERENCE-v3: Normal 5,076; AF 758; Other 2,415; Noisy 279 |
 | Size | Training zip 94.6 MB; whole-project zip 1.4 GB |
 | Format | MATLAB v4 WFDB `.mat` + `.hea`; REFERENCE-v0 to v3 `.csv` |
 | Access & license | Open; ODC Attribution v1.0 |
@@ -297,7 +297,7 @@ Sources: [Zenodo 3765780](https://zenodo.org/records/3765780), [Ribeiro 2020](ht
 | Records / subjects | 827 exams from 827 patients; 61.2% female |
 | Signal | 12 leads, 400 Hz, HDF5 (827, 4096, 12) |
 | Labels | Two cardiologists annotated independently; a senior specialist resolved disagreements. κ ranges from 0.741 (1dAVb) to 0.964 (LBBB). Also includes annotations from residents and students, and the DNN's predictions |
-| Class balance | Prevalence 1.6–4.4%. Counts: SB 16, AF 13, ST 37, RBBB 34, LBBB 30, 1dAVb 28 ([ECGFounder Table 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC12327759/)) |
+| Class balance | Prevalence 1.6–4.4%. Counts: SB 16, AF 13, ST 37 (⚠ Ribeiro 2020 Table 1 gives 36), RBBB 34, LBBB 30, 1dAVb 28 ([ECGFounder Table 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC12327759/)) |
 | Size / license | 218.2 MB; CC BY 4.0 |
 | Known issues | ⚠ The units note ("scale 1e-4V… multiplied by 1000 to obtain V") is internally inconsistent; check amplitudes yourself |
 
@@ -382,11 +382,11 @@ Sources: [2025 page](https://moody-challenge.physionet.org/2025/), [Reyna et al.
 
 | Field | Value |
 |---|---|
-| Public training | CODE-15%: 345,779 records, self-reported ("weak") labels, prevalence ~2% (Table 1: 1.92%).<br>SaMi-Trop: 1,631 records, all positive by serology, 400 Hz ([Zenodo 4905618](https://zenodo.org/records/4905618), CC BY 4.0, 264.5 MB).<br>PTB-XL: all assumed negative on geographic grounds, not tested |
+| Public training | CODE-15%: 345,779 records, self-reported ("weak") labels, prevalence ~2% (Table 1: 1.92%).<br>SaMi-Trop: 1,631 records, all positive by serology, 400 Hz ([Zenodo 4905618](https://zenodo.org/records/4905618), CC BY 4.0, 264.6 MB).<br>PTB-XL: all assumed negative on geographic grounds, not tested |
 | Hidden validation/test | REDS-II: 1,979 records from 631 patients, 300 Hz, serology; validation 1,419 (54.85% positive), test 560 (50.00%).<br>SaMi-Trop 3: 3,855 records (3,854 in the table); 28.50% positive.<br>ELSA-Brasil: 13,739 records, 2.04% positive, 300 Hz.<br>Negatives were oversampled and augmented to ~2% prevalence |
 | Format | WFDB, 16-bit at 1000/mV. Zero-padding removed; ages >89 set to 90 |
 | Metric | True positive rate among the top 5% of patients ranked by predicted probability |
-| Participation | 111 teams; 1,317 submissions; 41 ranked |
+| Participation | 111 teams; 1,317 submissions; 41 ranked (⚠ the results TSV ranks 39) |
 | Known issues | ⚠ The arXiv paper says SaMi-Trop came "from 1959 patients", while Zenodo says 1,631; 1,959 is the cohort size. ⚠ PTB-XL is 21,799 in the text but 21,779 in Table 1. ⚠ CODE-15% is 335,621 in Table 1 but 345,779 in the text |
 
 # Part 2: Published results
@@ -399,8 +399,8 @@ Only rows with the same protocol and metric share a table. Rows are sorted by ye
 |---|---|---|---|---|---|---|
 | [de Chazal et al., IEEE TBME](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15248536&rettype=abstract&retmode=text) | 2004 | Linear discriminants on morphology and RR features | DS1→DS2 | ⚠ Not in the abstract. 83% per [Garcia](https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/) and 86.2% per Mondéjar-Guerra [secondary, the two disagree] | 75.9 / 38.5 | 77.7 / 81.9 |
 | [Llamedo & Martínez, EMBC](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text) | 2010/2011 | Wavelet/RR features, LDA | DS1→DS2 | 93 | 77 / 39 | 81 / 87 |
-| [Garcia et al., Sci Rep](https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/) | 2017 | Vectorcardiogram + complex networks + SVM | DS1→DS2 | 92.4 | 62.0 / 53.0 | 87.3 / 59.4 |
-| [Mondéjar-Guerra et al., BSPC](https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download) | 2019 | SVM ensemble | DS1→DS2 | 94.5 | 78.1 / 49.7 | 94.7 / 93.9 |
+| [Garcia et al., Sci Rep](https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/) | 2017 | Vectorcardiogram + complex networks + SVM | DS1→DS2, 3 classes (N/S/V) | 92.4 | 62.0 / 53.0 | 87.3 / 59.4 |
+| [Mondéjar-Guerra et al., BSPC](https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download) | 2019 | SVM ensemble | DS1→DS2, 4 classes (Q excluded) | 94.5 | 78.1 / 49.7 | 94.7 / 93.9 |
 | [Zhang et al., J Healthc Eng](https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/) | 2021 | Adversarial CNN + RR features | DS1→DS2 | 94.7 | 78.8 / 90.8 | 92.5 / 94.3 |
 
 Mondéjar-Guerra's Table 6 cites de Chazal at SVEB 0.760/0.385 and VEB 0.803/0.866 [secondary]. ⚠ The VEB Se of 0.803 differs from the abstract's 77.7.
@@ -431,13 +431,13 @@ The official score is (F1 Normal + F1 AF + F1 Other) / 3, **with Noisy excluded*
 | Baydoun; Zihlmann; Bin; Xiong & Zhao | 2017 | Various | Hidden test | 3-class F1 | 0.82 (rank 5, tie) |
 | [Hannun et al., Nat Med](https://pmc.ncbi.nlm.nih.gov/articles/PMC6784839/) | 2019 | Deep CNN | Hidden test, after the challenge (not an official entry) | Class-average F1 | 0.83 |
 
-Clifford 2017 also reports voting ensembles: 45 LASSO-selected algorithms reached 0.87 and all 75 reached 0.855. These were read through a summary, so treat them as unverified.
+Clifford 2017 also reports voting ensembles: all 75 algorithms reached 0.855, and 45 LASSO-selected algorithms reached 0.858 (0.868 for "LASSO+"). ⚠ The abstract gives the LASSO result as 0.87.
 
 Not directly comparable: Hannun et al.'s own test set (cardiologist committee) gives sequence-level F1 0.807 vs cardiologists 0.753, and set-level F1 0.837 vs 0.780 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6784839/)).
 
 ## PTB-XL: Strodthoff et al. benchmark (macro AUC, 100 Hz, folds 1–8 train / 9 val / 10 test)
 
-Source: [arXiv 2004.13701, Table II](https://arxiv.org/pdf/2004.13701); same values in the [GitHub README](https://github.com/helme/ecg_ptbxl_benchmarking).
+Source: [arXiv 2004.13701, Table II](https://arxiv.org/pdf/2004.13701); same values (except the ensemble row) in the [GitHub README](https://github.com/helme/ecg_ptbxl_benchmarking).
 
 | Paper | Year | Model | all | diag | subdiag | superdiag | form | rhythm |
 |---|---|---|---|---|---|---|---|---|
@@ -459,8 +459,8 @@ Source: [arXiv 2004.13701, Table II](https://arxiv.org/pdf/2004.13701); same val
 | " | 2022 | SimCLR; BYOL | Linear / fine-tune | 0.8828 / 0.9265; 0.8781 / 0.9290 |
 | " | 2022 | Supervised 4FC+2LSTM+2FC | Supervised | 0.9318 |
 | [Mehari & Strodthoff](https://arxiv.org/pdf/2308.15291) | 2023 | S4, supervised | Supervised | 0.9417 |
-| " | 2023 | S4 + CPC pretraining (All2021) | Fine-tune | 0.9445 |
-| " | 2023 | S4 + patient metadata | Fine-tune (Fig. 1 only) | 0.9463 |
+| " | 2023 | S4 + CPC pretraining (All2021; ⚠ includes CinC 2021, which contains PTB-XL) | Fine-tune | 0.9445 |
+| " | 2023 | S4 + patient metadata | Fine-tune (All2021 pretraining, ⚠ as above) | 0.9463 |
 
 ## PTB-XL: linear probe with limited labels (MERL table; not comparable to the tables above)
 
@@ -490,7 +490,7 @@ Source: [challenge page](http://2018.icbeb.org/Challenge.html).
 
 Not directly comparable:
 - The winners' follow-up paper reports a "median overall F1-score of 0.84" ([Chen et al., iScience 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7031313/)).
-- Strodthoff 2021 used 10-fold cross-validation on the public CPSC data with xresnet1d101: AUC 0.974, F_β=2 0.819, G_β=2 0.602 ([README](https://github.com/helme/ecg_ptbxl_benchmarking)).
+- Strodthoff 2021 split the public CPSC data into 10 stratified folds (train 1–8, validation 9, test 10) with xresnet1d101: AUC 0.974, F_β=2 0.819, G_β=2 0.602 ([README](https://github.com/helme/ecg_ptbxl_benchmarking)).
 
 ## PhysioNet/CinC 2020: official challenge metric, hidden test
 
@@ -509,7 +509,7 @@ Source: [12-lead leaderboard](https://moody-challenge.physionet.org/2021/results
 | Team | Year | Lead set | Score |
 |---|---|---|---|
 | ISIBrno-AIMT (winner) | 2021 | 12, 6, 4, 3 and 2 leads | 0.58 each |
-| NIMA; DSAIL_SNU | 2021 | 12 | 0.55 (tied 2nd) |
+| NIMA; DSAIL_SNU; cardiochallenger | 2021 | 12 | 0.55 (tied 2nd) |
 | DSAIL_SNU | 2021 | 6 | 0.58 (tied 1st) |
 
 ISIBrno-AIMT's 12-lead scores per database are CPSC 0.725, G12EC 0.617, Undisclosed 0.532 and UMich 0.589 ([all-scores CSV](https://moody-challenge.physionet.org/2021/results/Final_2021_Challenge_All_Scores_Official_Entries-12-lead.csv)).
@@ -518,7 +518,7 @@ ISIBrno-AIMT's 12-lead scores per database are CPSC 0.725, G12EC 0.617, Undisclo
 
 ## CODE-test: F1 per class (Ribeiro 2020)
 
-Source: [Table 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/). The DNN threshold maximizes F1 on validation data, and DNN specificity is ≥0.995 for every class. The paper gives no macro F1.
+Source: [Table 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/). The DNN threshold is the point of maximum F1 on the test-set precision-recall curve (Fig. 2), so DNN F1 is optimistic, and DNN specificity is ≥0.995 for every class. The paper gives no macro F1.
 
 | Class | DNN | Cardiology residents | Emergency residents | Medical students |
 |---|---|---|---|---|
@@ -554,11 +554,11 @@ Official CinC 2000 Event 2 results, scored on 17,268 minutes ([PhysioNet](https:
 | Shinar et al. | 2000 | Challenge entry | Official test | 85.63% |
 | Maier et al. | 2000 | Challenge entry | Official test | 85.54% |
 | [Wang et al., PeerJ](https://pmc.ncbi.nlm.nih.gov/articles/PMC6756143/) | 2019 | Modified LeNet-5 using adjacent segments | Train on 35, test on 35 withheld | 87.6% (83.1 / 90.3); AUC 0.950 |
-| [Chang et al., Sensors](https://pmc.ncbi.nlm.nih.gov/articles/PMC7435835) | 2020 | 1-D CNN | Same | 87.9% (81.1 / 92.0) |
+| [Chang et al., Sensors](https://pmc.ncbi.nlm.nih.gov/articles/PMC7435835) | 2020 | 1-D CNN | Same; ⚠ best of 10 runs, selected on the withheld set | 87.9% (81.1 / 92.0) |
 
 Not directly comparable:
 - Nguyen et al. 2022 ([arXiv 2208.03408](https://arxiv.org/pdf/2208.03408)) report 91.13% on 16,945 test segments, not 17,268 minutes. ⚠ Their Se and Sp are swapped between the abstract and Table III.
-- Wang 2019 cites HMM 86.2% (Song 2016) and 83.8% (Sharma 2016) [secondary].
+- Wang 2019 cites HMM 86.2% (Song 2016) and 83.8% (Sharma 2016; ⚠ 83.4% in Wang's own comparison table) [secondary].
 - ⚠ The apparent subject overlap between learning and test sets (Part 1) may favour all of these results.
 
 ## WESAD: stress detection from chest ECG
@@ -620,6 +620,6 @@ There is no single standard benchmark for either dataset.
 
 - **Inter- vs intra-patient.** If beats from the same person appear in both training and test, the model can memorize that person's beat shape. MIT-BIH intra-patient results (93–100%) are far higher than inter-patient ones (83–95%) for this reason. Even de Chazal's split shares one subject (records 201 and 202). For any dataset with several records per person (PTB, INCART, Apnea-ECG, CODE), split by patient.
 - **Different label subsets.** PTB-XL "superdiag", "form" and "all" are different tasks. MERL and ST-MEM use their own splits or label subsets. The CinC 2017 score excludes the Noisy class. CODE-test reports per-class F1, not a macro score. Check the exact task before comparing two numbers.
-- **Hidden test vs cross-validation.** Challenge scores (CinC 2017/2020/2021/2025, CPSC) come from sequestered data the teams never saw. Paper results on public data (e.g. CPSC 10-fold CV, WESAD) are usually higher. The 2025 Chagas scores show how much results drop on a new population: the median fell 64% from validation to ELSA-Brasil.
+- **Hidden test vs cross-validation.** Challenge scores (CinC 2017/2020/2021/2025, CPSC) come from sequestered data the teams never saw. Paper results on public data (e.g. CPSC public-data folds, WESAD) are usually higher. The 2025 Chagas scores show how much results drop on a new population: the median fell 64% from validation to ELSA-Brasil.
 - **Dataset versions and leakage through pretraining.** PTB-XL v1.0.1 has 21,837 records and v1.0.3 has 21,799, after duplicate removal. Pretraining on CinC 2020/2021 data that contains PTB-XL can leak the PTB-XL test fold.
 - **Same metric name, different averaging.** "F1" may be macro, class-average or per-class, and "accuracy" may be per beat, per minute or per recording. The tables keep the definition each paper states.

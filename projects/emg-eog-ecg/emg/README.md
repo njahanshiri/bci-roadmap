@@ -28,7 +28,7 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 | Electrodes / placement | Ag/AgCl or silver bars (De Luca: 1 cm × 1 mm); SENIAM placement guidelines | [De Luca 2002](https://www.delsys.com/downloads/TUTORIAL/semg-detection-and-recording.pdf), [Hermens 2000](https://www.doi.org/10.1016/S1050-6411(00)00027-4) |
 | Main noise sources | Power-line and ambient EM noise, motion artifact (skin interface and cable), electronics noise, baseline noise. Electrode shift and sweat matter for wearables | [De Luca 2002](https://www.delsys.com/downloads/TUTORIAL/semg-detection-and-recording.pdf), [emg2pose](https://arxiv.org/html/2412.02725v1) |
 
-**Features and formats.** Classic decoders use time-domain features computed over sliding windows: mean absolute value (MAV), zero crossings, slope sign changes and waveform length (the "Hudgins set"), plus RMS, autoregressive coefficients and spectral features ([Hudgins 1993](https://scinapse.io/papers/2123167643), [Phinyomark 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11794267/)). Mean and median frequency fall as a muscle fatigues ([fatigue review](https://journals.utm.my/jurnalteknologi/article/view/4676)). Modern work instead feeds raw multichannel signals into CNNs or transformers (section 7). Common file formats are MATLAB `.mat` (Ninapro, [Atzori 2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935)), WFDB `.dat`/`.hea` (Hyser, GRABMyo on PhysioNet) and HDF5 (Meta's [generic-neuromotor-interface](https://github.com/facebookresearch/generic-neuromotor-interface) data).
+**Features and formats.** Classic decoders use time-domain features computed over sliding windows: mean absolute value (MAV), zero crossings, slope sign changes and waveform length (the "Hudgins set"), plus RMS, autoregressive coefficients and spectral features ([Hudgins 1993](https://scinapse.io/papers/2123167643), [Phinyomark 2012](https://doi.org/10.1016/j.eswa.2012.01.102)). Mean and median frequency fall as a muscle fatigues ([fatigue review](https://journals.utm.my/jurnalteknologi/article/view/4676)). Modern work instead feeds raw multichannel signals into CNNs or transformers (section 7). Common file formats are MATLAB `.mat` (Ninapro, [Atzori 2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935)), WFDB `.dat`/`.hea` (Hyser, GRABMyo on PhysioNet) and HDF5 (Meta's [generic-neuromotor-interface](https://github.com/facebookresearch/generic-neuromotor-interface) data).
 
 ## 2. Devices and specifications
 
@@ -44,7 +44,7 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 | Muovi / MuoviPro | OT Bioelettronica | Wearable HD-EMG probe | 32 per probe (Pro: up to 4×32) | — | — | Wi-Fi / Ethernet via SyncStation | Wearable HD-sEMG with IMU | Current ([OTB](https://otbioelettronica.it/en/muovi/)) |
 | Ultium EMG | Noraxon | Wireless sEMG | Up to 32 (analog out) | Up to 4000 Hz | 24 | Wireless, >8 h onboard memory | Sports, clinical gait | Current ([spec](https://www.praiston.pl/en/catalog/view/12716/noraxon-ultium-emg-surface-electromyography-with-myomuscle-module)) |
 | WaveX | Cometa | Wireless sEMG + IMU | Up to 36 transmitters | Up to 2000 Hz | — | Wi-Fi | Gait, clinical (MDR IIa) | Current ([Prophysics](https://www.prophysics.ch/en/our-products/emg-imu-sensors/wavex-receiver)) |
-| ActiveTwo Mk2 | BioSemi | Wired EEG/EMG amplifier | Up to 280 (≤4 kHz) | 2048–16384 Hz | 24 | USB2, optical | HD-EMG, EEG+EMG | Current ([BioSemi](https://www.biosemi.com/activetwo_full_specs.htm)) |
+| ActiveTwo Mk2 | BioSemi | Wired EEG/EMG amplifier | Up to 280 (≤8 kHz; 152 at 16 kHz) | 2048–16384 Hz | 24 | USB2, optical | HD-EMG, EEG+EMG | Current ([BioSemi](https://www.biosemi.com/activetwo_full_specs.htm)) |
 
 **Clinical / diagnostic**
 
@@ -58,9 +58,9 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 | Device | Company | Type | Channels | Sampling rate | Bits | Connectivity | Typical use | Status/price |
 |---|---|---|---|---|---|---|---|---|
 | Meta Neural Band | Meta | sEMG wristband | Not published (the research band is 16 ch @ 2 kHz, per [emg2pose](https://arxiv.org/abs/2412.02725)) | — | — | Bluetooth 5.3; 18 h battery; IPX7 | Input for Ray-Ban Display glasses | Shipping since 30 Sep 2025, bundled at $799, US only ([Techpoint](https://techpoint.africa/guide/meta-ray-ban-display-glasses/), [Meta](https://www.meta.com/blog/ces-2026-meta-ray-ban-display-teleprompter-emg-handwriting-garmin-unified-cabin-university-of-utah-tetraski/)) |
-| Mudra Band / Mudra Link | Wearable Devices | "Surface Nerve Conductance" (SNC) wristband | — | — | — | Bluetooth (Apple Watch; Link: Android/PC/XR) | Gestures for watch, XR, glasses | Shipping; Band $199 ([Wearable Technologies](https://wearable-technologies.com/news/mudra-the-worlds-first-neural-input-wristband), [Gizmodo AU](https://gizmodo.com.au/?p=1664211)) |
+| Mudra Band / Mudra Link | Wearable Devices | "Surface Nerve Conductance" (SNC) wristband | — | — | — | Bluetooth (Apple Watch; Link: Android/PC/XR) | Gestures for watch, XR, glasses | Shipping; Band $199 *unverified* ([Wearable Technologies](https://wearable-technologies.com/news/mudra-the-worlds-first-neural-input-wristband)) |
 | gForce Pro / Pro+ | OYMotion | sEMG armband | 8 | 1 kHz @ 8-bit or 500 Hz @ 12-bit | 8 / 12 | BLE 4.0 | Research, robotics | Status *unverified* ([Humanoid Guide](https://humanoid.guide/product/gforce-pro/)) |
-| Myo | Thalmic Labs | sEMG armband | 8 | 200 Hz | 8 | BLE | Gestures; Ninapro DB5 | Discontinued Oct 2018 ([TechCrunch](https://techcrunch.com/?p=1849477), [specs](https://pmc.ncbi.nlm.nih.gov/articles/PMC10222313)) |
+| Myo | Thalmic Labs | sEMG armband | 8 | 200 Hz | 8 | BLE | Gestures; Ninapro DB5 | Discontinued Oct 2018 ([myo-bluetooth README](https://github.com/thalmiclabs/myo-bluetooth), [specs](https://pmc.ncbi.nlm.nih.gov/articles/PMC10222313)) |
 
 **Prosthetic control**
 
@@ -77,7 +77,7 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 |---|---|---|---|---|---|---|---|---|
 | Cyton (+Daisy) | OpenBCI | ExG board (ADS1299) | 8 (16 with Daisy) | 250 Hz | 24 | BLE dongle, SD card | EEG/EMG hacking | — ([docs](https://docs.openbci.com/Cyton/CytonSpecs/), [data format](https://docs.openbci.com/Cyton/CytonDataFormat/)) |
 | MyoWare 2.0 | SparkFun / Advancer | Analog sensor | 1 (raw, rectified, envelope outputs) | Set by host ADC; 20.8–498.4 Hz band | Analog | Wired to MCU | Maker projects | $42.95 ([SparkFun](https://learn.sparkfun.com/tutorials/getting-started-with-the-myoware-20-muscle-sensor-ecosystem/all)) |
-| BITalino (r)evolution | PLUX | Multi-sensor board | 6 analog in | Up to 1000 Hz; EMG 25–480 Hz | 10 (4 ch) / 6 (2 ch) | — | Teaching, prototyping | — ([BITalino paper](https://scitepress.org/Papers/2014/47278/pdf/index.html)) |
+| BITalino (r)evolution | PLUX | Multi-sensor board | 6 analog in | Up to 1000 Hz; EMG 25–480 Hz | 10 (4 ch) / 6 (2 ch) | — | Teaching, prototyping | — ([BITalino paper](https://scitepress.org/Papers/2014/47278/pdf/index.html), [(r)evolution EMG band](https://pmc.ncbi.nlm.nih.gov/articles/PMC6498399)) |
 | Shimmer3 ExG | Shimmer | Wearable ECG/EMG | 2 EMG | 125–8000 SPS | — | Bluetooth (RN4678) | Ambulatory research | — ([spec sheet](https://shimmersensing.com/wp-content/docs/support/documentation/Shimmer3_ECG_EMG_Specification_Sheet_Revision_1.7.pdf)) |
 
 ## 3. Applications (domains)
@@ -86,7 +86,7 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 |---|---|---|---|
 | Prosthetics control | Residual-limb sEMG drives the hand, wrist or elbow, either directly (2 sites) or by pattern recognition | Ottobock Myo Plus, Coapt Gen2, Open Bionics Hero, Psyonic; TMR surgery creates extra signal sites ([Kuiken 2009](https://pmc.ncbi.nlm.nih.gov/articles/PMC3036162)) | Commercial |
 | Implanted myoelectric control | Sensors inside muscle give stable signals | Phantom Neuro, Össur IMES | Clinical trials |
-| Rehabilitation, stroke and SCI | EMG-triggered powered orthoses; decoding of spared motor units after injury | Myomo MyoPro (Medicare-covered since Apr 2024, [BusinessWire](https://www.businesswire.com/news/home/20250507851091/en)); MyoGestic ([Sci. Adv. 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11980827/)) | Commercial / research |
+| Rehabilitation, stroke and SCI | EMG-triggered powered orthoses; decoding of spared motor units after injury | Myomo MyoPro (Medicare-covered since Apr 2024, [BusinessWire](https://www.businesswire.com/news/home/20250507851091/en), [HomeCare](https://www.homecaremag.com/news/cms-posts-final-medicare-dmepos-fee-schedule-rate-myopro)); MyoGestic ([Sci. Adv. 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11980827/)) | Commercial / research |
 | Clinical neuromuscular diagnosis | Needle EMG plus nerve conduction studies for neuropathy, ALS, myopathy | Natus, Cadwell ([AANEM](https://education.aanem.org/AssetListing/Medical-Student-Nerve-Conduction-Study-Basics-6162/2022-Basics-of-NCS-and-Needle-EMG-Part-1-28668)) | Clinical standard |
 | Consumer HCI / AR-VR input | Wrist sEMG decoded into clicks, swipes and handwriting | Meta Neural Band, Mudra Link (works with Rokid, RayNeo, Viture glasses, [press](https://business.minstercommunitypost.com/minstercommunitypost/article/nnwire-2026-3-2-techmediabreaks-wearable-devices-ltd-nasdaq-wlds-to-debut-mudra-experience-studio-at-mwc-barcelona-2026)) | Commercial (early) |
 | Silent speech | Face and throat EMG during internal speech, decoded to words | AlterEgo: 92% median word accuracy in 2018 ([MIT](https://www.media.mit.edu/publications/alterego-IUI/)); startup launched Sep 2025 ([Decrypt](https://decrypt.co/338527/near-telepathic-wearable-communicate-silently-devices)) | Research / early commercial |
@@ -109,10 +109,10 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 | Meta (CTRL-labs) | US | Consumer wrist sEMG | Neural Band | CTRL-labs bought 2019 for a reported $500M–1B ([SiliconANGLE](https://siliconangle.com/2019/09/23/fb-buys-brain-reading-neural-interface-startup-ctrl-labs-500m-1b/)); shipping since Sep 2025; international rollout paused Jan 2026 ([Meta](https://www.meta.com/blog/ces-2026-meta-ray-ban-display-teleprompter-emg-handwriting-garmin-unified-cabin-university-of-utah-tetraski/)) |
 | Wearable Devices Ltd (WLDS) | Israel | Consumer neural wristband | Mudra Band / Link | Mudra Link launched H1 2025 ([Barchart](https://www.barchart.com/story/news/34725716/wearable-devices-nasdaq-wlds-reports-first-half-2025-results-marks-commercial-debut-of-mudra-link)); developer studio at MWC 2026 |
 | Thalmic Labs / North | Canada | Consumer armband | Myo | Myo ended 2018; patents sold to CTRL-labs 2019; North acquired by Google Jun 2020 ([CNBC](https://www.cnbc.com/2020/06/30/google-acquires-north-augmented-reality-glasses-start-up.html)) |
-| Ottobock | Germany | Prosthetics | Myo Plus | IPO in Frankfurt 9 Oct 2025, about €4.2B market cap ([gettex](https://www.gettex.de/en/news-overview/newsdetail/ottobock-celebrates-successful-ipo-in-frankfurt)); led Phantom Neuro's Series A |
+| Ottobock | Germany | Prosthetics | Myo Plus | IPO in Frankfurt 9 Oct 2025, about €4.2B market cap at the €66 offer price ([press release](https://app.boersengefluester.de/de/newswire/DE000BCK2223/ottobock-se-co-kgaa/ottobock-celebrates-successful-ipo-in-frankfurt-2211374)); led Phantom Neuro's Series A |
 | Össur (Embla Medical) | Iceland | Prosthetics | i-Limb Quantum, IMES research | Parent renamed Embla Medical 2024 ([Össur](https://www.ossur.com/global/about-ossur/newsroom/ossur-establishes-new-parent-organization-embla-medical)) |
 | Coapt | US | Pattern-recognition control | Complete Control Gen2 | Hanger agreed to acquire, Feb 2025 ([Hanger](https://corporate.hanger.com/?p=3207)) |
-| Psyonic | US | Bionic hand | Ability Hand | Integration with NVIDIA Isaac Lab and ABB; moved to San Diego 2026 ([Monoist](https://monoist.itmedia.co.jp/mn/articles/2602/06/news052.html), partly *unverified*) |
+| Psyonic | US | Bionic hand | Ability Hand | Integration with NVIDIA Isaac Lab (Mar 2026) and ABB arms; based in San Diego since 2023 ([Humanoids Daily](https://www.humanoidsdaily.com/feed/from-prosthetics-to-pixels-psyonic-and-nvidia-bridge-the-robotics-data-gap-with-real-to-real-transfer), [Monoist](https://monoist.itmedia.co.jp/mn/articles/2602/06/news052.html), [San Diego Magazine](https://sandiegomagazine.com/partner-content/psyonic-creator-of-the-worlds-most-powerful-bionic-hand-now-calls-san-diego-home/)) |
 | Phantom Neuro | US | Implanted EMG interface | Phantom X | $19M Series A (Apr 2025), FDA Breakthrough + TAP; trial from 2026 ([TechCrunch](https://techcrunch.com/2025/04/15/phantom-neuro-grabs-19m-to-help-amputees-gain-control-of-their-phantom-limbs)) |
 | Atom Limbs | US | Non-invasive sEMG arm | Atom Touch | 2025–26 FDA/shipping status *unverified* ([Wefunder](https://wefunder.com/feed/168612.md)) |
 | Open Bionics | UK | 3D-printed bionic arm | Hero PRO / Hero RGD | Launched 15 Apr 2025 ([Open Bionics](https://openbionics.com/open-bionics-sets-new-benchmark-with-launch-of-hero-rgd-and-hero-pro/)) |
@@ -134,7 +134,7 @@ Items marked *unverified* could not be confirmed from a source. Cells marked "�
 | [US 7,596,393](https://patents.google.com/patent/US7596393) | ETRI (Korea), asserted by Perceptix | Wearable phone using wrist EMG to interpret hand motions | 2009 (expires 2028) | Asserted against Meta's Neural Band |
 | Myo patent portfolio (numbers not confirmed) | Thalmic/North, then CTRL-labs, then Meta | Armband gesture control | Sold 2019 | Consolidated early consumer-EMG IP at Meta ([BetaKit](https://betakit.com/ctrl-labs-acquires-norths-patents-for-myo-armband-technology/)) |
 
-**Litigation.** On 23 Oct 2025, Perceptix Technologies sued Meta in the US District Court for the Central District of California. The suit claims that Orion, Ray-Ban Display and the Neural Band infringe US 7,596,393 ([Bloomberg Law](https://news.bloomberglaw.com/ip-law/meta-ar-glasses-prompt-patent-suit-over-muscle-signal-technology)). I found no confirmed suit between Wearable Devices and Meta.
+**Litigation.** On 22 Oct 2025, Perceptix Technologies sued Meta in the US District Court for the Central District of California. The suit claims that Orion, Ray-Ban Display and the Neural Band infringe US 7,596,393 ([Bloomberg Law](https://news.bloomberglaw.com/ip-law/meta-ar-glasses-prompt-patent-suit-over-muscle-signal-technology)). I found no confirmed suit between Wearable Devices and Meta.
 
 ## 6. Most-cited papers
 
@@ -150,7 +150,7 @@ These are field-defining works. Citation counts are left out because I could not
 | [Multichannel blind source separation using convolution kernel compensation](https://www.academia.edu/49664588/Multichannel_Blind_Source_Separation_Using_Convolution_Kernel_Compensation) | Holobar, Zazula | IEEE TSP 2007 | Core HD-EMG motor-unit decomposition algorithm |
 | [Targeted muscle reinnervation for real-time myoelectric control of multifunction artificial arms](https://pmc.ncbi.nlm.nih.gov/articles/PMC3036162) | Kuiken et al. | JAMA 2009 | Surgery that creates new EMG sites for prosthesis control |
 | [Filtering the surface EMG signal: movement artifact and baseline noise contamination](https://www.bu.edu/nmrc/files/2010/06/103.pdf) | De Luca, Gilmore, Kuznetsov, Roy | J. Biomech. 2010 | The 20 Hz high-pass recommendation |
-| [Feature reduction and selection for EMG signal classification](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11794267/) | Phinyomark, Phukpattaranont, Limsakul | Expert Syst. Appl. 2012 | Standard EMG feature comparison |
+| [Feature reduction and selection for EMG signal classification](https://doi.org/10.1016/j.eswa.2012.01.102) | Phinyomark, Phukpattaranont, Limsakul | Expert Syst. Appl. 2012 | Standard EMG feature comparison |
 | [Electromyography data for non-invasive naturally-controlled robotic hand prostheses](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935) | Atzori et al. | Scientific Data 2014 | Ninapro, the field's main benchmark |
 | [The extraction of neural information from the surface EMG for the control of upper-limb prostheses](https://ieeexplore.ieee.org/document/6737308) | Farina, Jiang, Rehbaum, Holobar, Graimann, Dietl, Aszmann | IEEE TNSRE 2014 | Why academic decoders had not reached commercial prostheses |
 | [Deep learning for electromyographic hand gesture signal classification using transfer learning](https://arxiv.org/abs/1801.07756v3) | Côté-Allard et al. | IEEE TNSRE 2019 | Early cross-user deep learning for EMG |
@@ -161,9 +161,9 @@ These are field-defining works. Citation counts are left out because I could not
 - **It shipped.** The Neural Band went on sale 30 Sep 2025, and neural handwriting entered early access in January 2026 ([Meta](https://www.meta.com/blog/ces-2026-meta-ray-ban-display-teleprompter-emg-handwriting-garmin-unified-cabin-university-of-utah-tetraski/)).
 - **Typing from EMG (emg2qwerty, NeurIPS 2024).** The generic model's character error rate (CER) is 51.8% with a language model; a personalized model gets 6.95%; the best user reaches 3.16% ([arXiv](https://arxiv.org/html/2410.20081v1)).
 - **Hand pose from EMG (emg2pose, NeurIPS 2024).** The best model's error is 12.2° and 15.8 mm on unseen users ([arXiv](https://arxiv.org/html/2412.02725v1)).
-- **Scaling.** Transformers grow to 110M parameters, then distill 50x smaller while losing less than 1.5 points ([TMLR 2025](https://arxiv.org/abs/2507.22094)). TinyMyo (3.6M parameters) gets 89.4% on Ninapro DB5 and runs on a 36 mW microcontroller ([arXiv](https://arxiv.org/pdf/2512.15729v2)).
+- **Scaling.** Transformers grow to 110M parameters, then distill 50x smaller while losing less than 1.5 points ([TMLR 2025](https://arxiv.org/abs/2507.22094)). TinyMyo (3.6M parameters) gets 89.4% on Ninapro DB5 and runs on a GAP9 microcontroller at about 57 mW ([arXiv](https://arxiv.org/pdf/2512.15729v2)).
 - **Decomposition.** Swarm-Contrastive Decomposition finds about 26 motor units versus about 14 for the baseline ([J. Physiol. 2025](https://research.chalmers.se/en/publication/545684)).
-- **Clinical HD-EMG.** MyoGestic gives 7 people with spinal cord injury, stroke or amputation working control within minutes ([Sci. Adv. 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11980827/)).
+- **Clinical HD-EMG.** MyoGestic gives 7 people with spinal cord injury (including spinal stroke) or amputation working control within minutes ([Sci. Adv. 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11980827/)).
 - **Market signals.** Coapt went to Hanger, Ottobock had its IPO, Phantom Neuro got FDA Breakthrough designation, Cionic's Neural Sleeve 2 was cleared, and Myomo grew 26% (section 4).
 
 ## 8. Current state of the field
@@ -192,7 +192,7 @@ Full specifications for each dataset, and tables of published results on them, a
 
 | Dataset | Content | Size | Link |
 |---|---|---|---|
-| Ninapro DB1–DB10 | Hand gestures, sEMG + kinematics/force; includes amputees | DB2: 40 subjects, 49 movements, 12 Delsys at 2 kHz; DB9: 77 subjects | [ninapro.hevs.ch](https://ninapro.hevs.ch/) |
+| Ninapro DB1–DB10 | Hand gestures, sEMG + kinematics/force; includes amputees | DB2: 40 subjects, 49 movements, 12 Delsys at 2 kHz; DB9: 77 subjects (hand kinematics only, no EMG) | [ninapro.hevs.ch](https://ninapro.hevs.ch/) |
 | emg2qwerty | Wrist sEMG during touch typing | 108 users, 1,135 sessions, 346 h | [arXiv](https://arxiv.org/abs/2410.20081) |
 | emg2pose | Wrist sEMG + 26-camera hand pose | 193 users, 370 h, 16 ch @ 2 kHz | [arXiv](https://arxiv.org/abs/2412.02725) |
 | Meta Generic Neuromotor Interface | Discrete gestures, handwriting, wrist | 100 participants; about 64 h / 141 h / 77 h; CC-BY-NC | [GitHub](https://github.com/facebookresearch/generic-neuromotor-interface) |

@@ -15,7 +15,7 @@ This file covers public datasets that contain EOG, either as the main signal or 
 | Klados & Bamidis 2016 | 27 | HEOG, VEOG | 200 | Pure vs. contaminated EEG | not reported | Mendeley, open |
 | Bulling EOG activity | 8 | hEOG, vEOG | 128 | 5 office activities + NULL | 22 MB | DaRUS, CC BY-NC-SA 4.0 |
 | EEGEyeNet | 356 | none (video eye tracker as label) | 500 (EEG and ET) | Gaze direction and position | 47+ h | CC BY 4.0 |
-| DEAP | 32 | hEOG, vEOG | 512 raw / 128 preprocessed | Valence, arousal, etc. | not reported | EULA (*unverified*) |
+| DEAP | 32 | hEOG, vEOG | 512 raw / 128 preprocessed | Valence, arousal, etc. | not reported | Signed EULA, academic only |
 | ALS locked-in EEG+EOG | 4 patients | 4 electrodes (2 H, 2 V) | 500 | Yes/no answers, spelling | not reported | Open, CC BY 4.0 |
 | JINS MEME driving | 51 | 4 (L, R, H, V) | 200 | Simulator vs. real road | not reported | IEEE DataPort subscription |
 
@@ -31,8 +31,8 @@ This file covers public datasets that contain EOG, either as the main signal or 
 | Subjects | Sleep Cassette (SC): 78 healthy Caucasians aged 25–101 with no sleep medication (153 recordings). Sleep Telemetry (ST): 22 subjects with mild difficulty falling asleep (44 recordings) |
 | Device & electrodes | not reported |
 | EOG & other channels | 1 horizontal EOG; EEG Fpz-Cz and Pz-Oz; submental chin EMG. SC also has oro-nasal respiration, rectal temperature and an event marker |
-| Sampling rate | EEG, EOG and EMG at 100 Hz; other signals at 1 Hz |
-| Resolution / filters | not reported (SC EMG is high-passed, rectified and low-passed to 1 Hz RMS) |
+| Sampling rate | EEG and EOG at 100 Hz (ST also EMG at 100 Hz); SC EMG envelope and other signals at 1 Hz |
+| Resolution / filters | not reported (SC EMG is high-passed, rectified and low-passed; the RMS envelope is sampled at 1 Hz) |
 | Labels | Manual hypnograms scored by trained technicians with the 1968 R&K manual: W, R, 1, 2, 3, 4, M, ? |
 | Sessions | SC: two ~20 h day-night home recordings per subject. ST: two ~9 h hospital nights per subject (temazepam and placebo) |
 | Size / format | 8.1 GB, EDF and EDF+ |
@@ -158,10 +158,10 @@ This file covers public datasets that contain EOG, either as the main signal or 
 | Year & paper | Koelstra et al. 2012, IEEE Trans Affective Computing 3(1) |
 | Subjects | 32, each watching 40 one-minute music videos; face video for 22 of them |
 | Channels | 32 EEG plus 8 peripheral channels: hEOG, vEOG, zEMG, tEMG, GSR, respiration, blood volume, temperature ([summary](https://arxiv.org/pdf/2001.00191)) |
-| Sampling / filters | Preprocessed version downsampled from 512 to 128 Hz, band-pass 4–45 Hz (as summarised by secondary sources; the readme was offline when checked) |
+| Sampling / filters | Preprocessed version downsampled from 512 to 128 Hz. EEG: EOG artefacts removed, band-pass 4–45 Hz, common average reference; hEOG/vEOG only downsampled ([readme, archived](https://web.archive.org/web/2023/https://www.eecs.qmul.ac.uk/mmv/datasets/deap/readme.html)) |
 | Labels | Self-rated arousal, valence, like/dislike, dominance and familiarity |
 | Trials | 63 s each, including a 3 s baseline |
-| Access | EULA (*unverified*; the site was down) |
+| Access | Signed EULA; academic research only, permanent academic staff must apply |
 
 ### ALS locked-in EEG+EOG ([Sci Data 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC7801642/))
 
@@ -213,7 +213,7 @@ XSleepNet's table lists DeepSleepNet's 82.0 / 0.760 / 76.9 under the EEG·EOG co
 | [XSleepNet](https://ar5iv.labs.arxiv.org/html/2007.05492) | 2020 | SeqSleepNet baseline | EEG + EOG | 20-fold CV | 86.0 | 0.809 | 79.7 |
 | [XSleepNet](https://ar5iv.labs.arxiv.org/html/2007.05492) | 2020 | XSleepNet2 | EEG + EOG | 20-fold CV | 86.4 | 0.813 | 80.9 |
 
-**Table C. EOG only (horizontal EOG)**
+**Table C. EOG only (horizontal EOG); the last row is Maiti's EEG reference, not EOG**
 
 These rows are not directly comparable with each other because the protocols differ.
 
@@ -269,14 +269,14 @@ The EOG-only rows below are not directly comparable with the table above, becaus
 
 | Paper | Year | Method | Input | RMSE | PCC |
 |---|---|---|---|---|---|
-| [Li et al., as reported by Zhang & Etemad](https://ar5iv.labs.arxiv.org/html/1912.07812) | – | DANN | EEG + EOG | 0.1427 | 0.8402 |
+| [Li et al., as reported by Zhang & Etemad](https://ar5iv.labs.arxiv.org/html/1912.07812) | 2018 | DANN | EEG + EOG | 0.1427 | 0.8402 |
 | [Zhang & Etemad](https://ar5iv.labs.arxiv.org/html/1912.07812) | 2019 | LSTM-CapsAtt | EEG + EOG | 0.1089 | 0.8823 |
 
 The jump from PCC ≈ 0.99 within subjects to ≈ 0.88 across subjects shows how much the within-session protocol flatters results.
 
 ### EEGdenoiseNet, EOG artifact removal (lower RRMSE is better, higher CC is better)
 
-**Table 1. Original protocol: 80/10/10 split, SNR −7 to 2 dB, averaged across SNRs, numbers as reported by [Gabardi et al. 2023](https://ar5iv.labs.arxiv.org/html/2310.17335)**
+**Table 1. Test SNR −7 to 2 dB, averaged across SNRs, numbers as reported by [Gabardi et al. 2023](https://ar5iv.labs.arxiv.org/html/2310.17335). Not strictly comparable: Gabardi uses a 60/40 train/test split (training SNR −7 to 4 dB), and calls the DeepSeparator and EEGDnet values "literature benchmark" results without saying they were re-run under its split**
 
 | Paper | Year | Method | Input | RRMSE_t | RRMSE_s | CC |
 |---|---|---|---|---|---|---|
@@ -286,7 +286,7 @@ The jump from PCC ≈ 0.99 within subjects to ≈ 0.88 across subjects shows how
 
 The original EEGdenoiseNet paper reports its FCNN, CNN and RNN baselines only as figures, so they are not listed.
 
-**Table 2. Not directly comparable: [D4PM](https://arxiv.org/html/2509.14302) protocol, SNR −5 to 5 dB, 80/10/10. It is not stated whether the baselines were retrained.**
+**Table 2. Not directly comparable: [D4PM](https://arxiv.org/html/2509.14302) protocol, SNR −5 to 5 dB, 80/10/10. D4PM trained the baselines itself (one model per artifact type).**
 
 | Paper | Year | Method | RRMSE_t | RRMSE_s | CC |
 |---|---|---|---|---|---|
@@ -309,7 +309,7 @@ The original EEGdenoiseNet paper reports its FCNN, CNN and RNN baselines only as
 | Amplitude | RMSE (mm) | 74.7 | 30.7 (PyramidalCNN) |
 | Absolute position | RMSE (mm) | 123.3 | 70.2 (CNN) |
 
-Input is EEG only. Which preprocessing variant (minimal or maximal) these numbers come from is *unverified*.
+Input is EEG only. These numbers use the minimally preprocessed data (paper Table 4; maximal-preprocessing results are in its appendix Table 7).
 
 ### Bulling EOG activity dataset
 

@@ -6,9 +6,9 @@ This page has full specifications for the main public EMG datasets and the publi
 
 | Dataset | Subjects | Channels | Sampling rate | Task / classes | Size on disk | License |
 |---|---|---|---|---|---|---|
-| Ninapro DB1 | 27 intact | 10 | 100 Hz (RMS signal) | 52 movements + rest | not reported | CC BY 4.0 |
-| Ninapro DB2 | 40 intact | 12 | 2 kHz | 49 movements + rest | not reported | CC BY 4.0 |
-| Ninapro DB3 | 11 amputees | 12 (10 for 2 subjects) | 2 kHz | up to 49 + rest | not reported | CC BY 4.0 |
+| Ninapro DB1 | 27 intact | 10 | 100 Hz (RMS signal) | 52 movements + rest | not reported | CC0 (Dryad copy) |
+| Ninapro DB2 | 40 intact | 12 | 2 kHz | 49 movements + rest | not reported | CC0 (Dryad copy) |
+| Ninapro DB3 | 11 amputees | 12 (10 for 2 subjects) | 2 kHz | up to 49 + rest | not reported | CC0 (Dryad copy) |
 | Ninapro DB5 | 10 intact | 16 (2 Myo) | 200 Hz | 52 + rest | not reported | *not verified* |
 | Ninapro DB7 | 20 intact + 2 amputees | 12 (+ 9-axis IMU) | 2 kHz | 40 movements | 30.9 GB (per TinyMyo) | *not verified* |
 | CapgMyo (DB-a/b/c) | 23 (18 / 10 / 10 per subset) | 128 (8×16 grid) | 1 kHz | 8 / 8 / 12 gestures | not reported | *not verified* |
@@ -18,7 +18,7 @@ This page has full specifications for the main public EMG datasets and the publi
 | EMG-EPN-612 | 612 | 8 (Myo) | 200 Hz | 5 gestures + relax | 5.5 GB | CC BY 4.0 |
 | putEMG | 44 | 24 (3×8) | 5120 Hz | 7 gestures + idle | not reported | CC BY-NC 4.0 |
 | emg2qwerty | 108 | 2 × 16 (both wrists) | 2 kHz | Typing → characters | not reported | CC BY-NC-SA 4.0 |
-| emg2pose | 193 | 16 per wrist | 2 kHz (from 22 kHz) | 20-DoF hand angles | 431 GB (per TinyMyo) | CC BY-NC-SA 4.0 |
+| emg2pose | 193 | 16 per wrist | 2 kHz (from 22 kHz *unverified*) | 20-DoF hand angles | 431 GB (per TinyMyo) | CC BY-NC-SA 4.0 |
 | Meta Generic Neuromotor Interface | 100 per task | 16 | 2 kHz | Discrete gestures, handwriting, wrist angle | not reported | CC BY-NC 4.0 |
 
 Sources are in each dataset's block below.
@@ -36,11 +36,11 @@ Sources are in each dataset's block below.
 | Channels & placement | 8 equally spaced around the forearm at the radio-humeral joint, plus 2 on the flexor and extensor digitorum superficialis |
 | Sampling rate | 100 Hz. The electrodes output an RMS-rectified signal, not raw EMG |
 | ADC resolution | 12-bit (National Instruments card) |
-| Hardware filters | Band-pass and 50 Hz filtering inside the Otto Bock electrode (cutoffs not reported) |
+| Hardware filters | Band-pass filtering and RMS rectification inside the Otto Bock electrode (cutoffs not reported); 50 Hz filtering *unverified* |
 | Tasks / labels | 52 movements + rest in 3 exercises; labels from the stimulus, with a relabeled version ("restimulus"); CyberGlove kinematics |
 | Repetitions | 10 per movement, 5 s movement + 3 s rest; one session |
 | Size / format | Size not reported; one MATLAB file per subject per exercise |
-| License | CC BY 4.0 (metadata CC0) |
+| License | CC0 1.0 for the [Dryad copy](https://doi.org/10.5061/dryad.1k84r); CC BY 4.0 is the license of the *Sci. Data* article (metadata CC0) |
 | Standard protocol | Train on about 2/3 of repetitions, test on repetitions 2, 5 and 7 ([PMC4421935](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935)) |
 | Known issues | Signal is pre-rectified and low-rate, so raw-EMG methods do not apply directly; labels are relabeled offline with a likelihood-ratio algorithm; recordings drift with repetition number in some subjects |
 
@@ -50,14 +50,14 @@ Sources are in each dataset's block below.
 | Year & paper | 2014; Atzori et al., *Scientific Data* ([PMC4421935](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935)) |
 | Subjects | 40 intact: 28 male, 12 female; 34 right-handed; age 29.9 ± 3.9 |
 | Device & electrodes | 12 Delsys Trigno wireless; CyberGlove II; Finger Force Linear Sensor |
-| Channels & placement | 8 around the forearm at the radio-humeral joint, 2 on the flexor digitorum superficialis, 2 on the extensor digitorum, 2 on biceps/triceps ([DB2 page](https://ninapro.hevs.ch/instructions/DB2.html)) |
+| Channels & placement | 8 around the forearm at the radio-humeral joint, 1 on the flexor digitorum superficialis, 1 on the extensor digitorum, 1 each on biceps and triceps ([DB2 page](https://ninapro.hevs.ch/instructions/DB2.html)) |
 | Sampling rate | EMG 2 kHz; accelerometers 148 Hz |
 | ADC resolution | not reported |
 | Hardware filters | not reported; 50 Hz harmonics removed with a Hampel filter |
 | Tasks / labels | 49 movements + rest (exercises B 17, C 23, D 9 force patterns); glove kinematics; force for exercise D |
 | Repetitions | 6 per movement; one session |
 | Size / format | Size not reported; MATLAB |
-| License | CC BY 4.0 |
+| License | CC0 1.0 (Dryad copy) |
 | Standard protocol | Repetitions 1, 3, 4, 6 train; 2, 5 test |
 | Known issues | Same relabeling and drift notes as DB1 |
 
@@ -68,7 +68,7 @@ Sources are in each dataset's block below.
 | Subjects | 11 trans-radial amputees, all male; age 42.36 ± 11.96; 0–90% of forearm remaining; 1–14 years since amputation ([DB3 page](https://ninapro.hevs.ch/instructions/DB3.html)) |
 | Device, channels, rates | Same as DB2 (12 Delsys at 2 kHz), but only 10 electrodes for subjects 7–8 because there was not enough space |
 | Tasks | Up to 49 movements + rest, 6 repetitions |
-| License / format | CC BY 4.0; MATLAB |
+| License / format | CC0 1.0 (Dryad copy); MATLAB |
 | Standard protocol | Repetitions 2, 5 test |
 | Known issues | Subjects 1, 3 and 10 stopped early from fatigue or pain (39, 49 and 43 movements done); channel count varies |
 
@@ -114,11 +114,11 @@ Sources are in each dataset's block below.
 | Device & electrodes | Custom wearable with 8 modules; silver wet disposable electrodes, 3 mm diameter; 7.5 mm × 10.05 mm spacing |
 | Channels & placement | 128 (8×16 array) wrapped around the right forearm |
 | Sampling rate / ADC | 1000 Hz, 16-bit |
-| Hardware filters | Band-pass 20–380 Hz; 45–55 Hz band-stop |
+| Hardware filters | Band-pass 20–380 Hz; 45–55 Hz band-stop applied in preprocessing |
 | Tasks | DB-a and DB-b: 8 isometric/isotonic gestures (Ninapro nos. 13–20). DB-c: 12 finger movements (Ninapro nos. 1–12) |
 | Repetitions / sessions | 10 trials per gesture; DB-b has 2 sessions at least 7 days apart (band re-donned) |
 | Format | MATLAB `.mat`; preprocessed files keep the middle 1 s of each trial |
-| Access / license | http://zju-capg.org/myo/data (per paper; link not checked); a DB-a copy is on [figshare](https://figshare.com/articles/Data_from_Gesture_Recognition_by_Instantaneous_Surface_EMG_Images_CapgMyo-DBa/7210397); license *not verified* |
+| Access / license | http://zju-capg.org/myo/data (per paper; link not checked); a DB-a copy is on [figshare](https://figshare.com/articles/Data_from_Gesture_Recognition_by_Instantaneous_Surface_EMG_Images_CapgMyo-DBa/7210397); figshare copy is CC0; license of the official release *not verified* |
 | Standard protocol | Intra-session: half or most trials train, rest test. Inter-session (DB-b): train session 1, test session 2. Inter-subject: leave-one-subject-out |
 | Known issues | Electrode shift between sessions; the released "middle 1 s" segments remove gesture transitions, which makes the task easier than online use |
 
@@ -212,7 +212,7 @@ Sources are in each dataset's block below.
 | Year & paper | 2024; Salter et al., NeurIPS Datasets & Benchmarks ([arXiv](https://arxiv.org/html/2412.02725v1)) |
 | Subjects | 193 (158 train / 15 val / 20 test) |
 | Device | sEMG-RD wristband, 16 bipolar channels, dry gold-plated electrodes |
-| Sampling rate / ADC | Recorded at 22 kHz, stored at 2 kHz; 12-bit |
+| Sampling rate / ADC | Recorded at 22 kHz (*unverified*), stored at 2 kHz; 12-bit |
 | Filters | Hardware band-pass 20–850 Hz; data then high-passed at 40 Hz |
 | Labels | 26-camera OptiTrack motion capture at 60 Hz → 20 joint angles per hand |
 | Stages / sessions | 29 stages (23 train, 6 held out); 751 sessions, each with a new band placement; 370.3 h |
@@ -240,7 +240,7 @@ Within each table, rows use the same protocol and metric unless a row is marked 
 ### Ninapro DB1: intra-subject, about 2/3 of repetitions to train, ~52 classes, accuracy
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
-| [Atzori et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935) | 2014 | Random forest, combined features | Reps 2, 5, 7 test; 200 ms | Accuracy | 75.32% |
+| [Atzori et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935) | 2014 | Random forest, combined features | Reps 2, 5, 7 test; 200 ms; 50 movements | Accuracy | 75.32% |
 | [Atzori et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5013051) | 2016 | Simple CNN | ~2/3 train; **150 ms** | Accuracy | 66.59 ± 6.40% |
 | [Geng et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5109222/) | 2016 | CNN on instantaneous EMG images | ~2/3 train; 28-frame vote (280 ms) | Accuracy | 75.3% (65.1% per frame) |
 | [Hu et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC6207326) | 2018 | Attention CNN-RNN | ~2/3 train; 200 ms | Accuracy | 87.0% |
@@ -283,6 +283,9 @@ Cross-subject DB2 (LOSOCV + MS-AdaBN, 200 ms), via [HVPN Table 5](https://www.nc
 Cross-subject DB5 (LOSOCV + MS-AdaBN, 41 classes), via [HVPN Table 5](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/): MV-CNN 87.2%, HVPN 88.9%.
 
 ### Ninapro DB5: TinyMyo protocol (reps 1, 3, 4, 6 train / 2 validation / 5 test). Not directly comparable with the table above
+
+Baseline rows are copied by TinyMyo from the PhysioWave and WaveFormer papers, which use different windows (≈1953 ms / 1024 samples), so they are not directly comparable with the TinyMyo row either.
+
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
 | OTiS, via [TinyMyo](https://arxiv.org/html/2512.15729v2) | — | 45M-parameter foundation model | as above | Accuracy | 81.79 ± 1.56% |
@@ -291,17 +294,17 @@ Cross-subject DB5 (LOSOCV + MS-AdaBN, 41 classes), via [HVPN Table 5](https://ww
 | WaveFormer, via [TinyMyo](https://arxiv.org/html/2512.15729v2) | — | 3.1M transformer | as above | Accuracy | 87.53 ± 0.92% |
 | [Fasulo et al. (TinyMyo)](https://arxiv.org/html/2512.15729v2) | 2025 | 3.6M pretrained transformer, fine-tuned, 200 ms | as above | Accuracy | 89.41 ± 0.16% |
 
-### Ninapro DB5: exercise A only (18 gestures). Different subset
+### Ninapro DB5: exercise B only (17 gestures + rest = 18). Different subset
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
-| [Côté-Allard et al.](https://arxiv.org/abs/1801.07756v5) | 2019 | Raw-EMG ConvNet + transfer learning | 18 gestures, 10 participants | Accuracy | 68.98% |
+| [Côté-Allard et al.](https://arxiv.org/abs/1801.07756v5) | 2019 | Raw-EMG ConvNet + transfer learning | 18 gestures, 10 participants, lower Myo only; reps 1–4 train, 5–6 test | Accuracy | 68.98% |
 
 ### Ninapro DB7: 6-fold cross-validation over repetitions, 40 classes, LDA
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
-| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG only | 20 able-bodied | Median accuracy | 60.1% |
-| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG + IMU | 20 able-bodied | Median accuracy | 82.7% |
-| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG only / EMG + IMU | 2 amputees | Median accuracy | 40.7% / 77.8% |
+| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG only | 20 able-bodied | Median balanced accuracy | 60.1% |
+| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG + IMU | 20 able-bodied | Median balanced accuracy | 82.7% |
+| [Krasoulis et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/) | 2017 | LDA, EMG only / EMG + IMU | 2 amputees | Median balanced accuracy | 40.7% / 77.8% |
 
 ### CapgMyo DB-a: intra-subject, 8 gestures
 | Paper | Year | Method | Protocol | Metric | Result |
@@ -332,7 +335,7 @@ The Amma et al. number is as reproduced by Du et al.; I did not read the CHI pap
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
 | [Jiang et al.](https://physionet.org/files/hd-semg/1.0.0/manuscript_author_version.pdf) | 2021 | PCA + LDA | Dynamic / maintenance tasks | Accuracy | 96.86 ± 2.49% / 93.80 ± 3.80% |
-| [Jiang et al.](https://physionet.org/files/hd-semg/1.0.0/manuscript_author_version.pdf) | 2021 | Toolbox CNN | Dynamic / maintenance tasks | Accuracy | 88.96 ± 1.76% / 89.84 ± 1.91% |
+| [Jiang et al.](https://physionet.org/files/hd-semg/1.0.0/manuscript_author_version.pdf) | 2021 | Toolbox CNN | **Not directly comparable:** all subjects of a session pooled; 6-fold (dynamic) / 2-fold (maintenance) CV | Accuracy | 88.96 ± 1.76% / 89.84 ± 1.91% |
 
 ### GRABMyo: user-specific, across 3 days
 | Paper | Year | Method | Protocol | Metric | Result |
@@ -345,7 +348,7 @@ The Amma et al. number is as reproduced by Du et al.; I did not read the CHI pap
 |---|---|---|---|---|---|
 | [Benalcázar et al.](https://redi.cedia.edu.ec/document/4570) | 2023 | Best supervised model | User-general (tested on users not seen in training) | Classification / recognition accuracy | 90.49 ± 9.7% / 86.83 ± 11.30% |
 
-| Paper | Year | Method | Protocol (TinyMyo subject-wise split) | Metric | Result |
+| Paper | Year | Method | Protocol (TinyMyo per-user split; whether users are disjoint is *unverified*; baseline rows copied from PhysioWave/WaveFormer papers with different windows, not directly comparable) | Metric | Result |
 |---|---|---|---|---|---|
 | PhysioWave-Small, via [TinyMyo](https://arxiv.org/html/2512.15729v2) | 2025 | Wavelet transformer | as above | Accuracy | 93.12% |
 | MOMENT, via [TinyMyo](https://arxiv.org/html/2512.15729v2) | — | 385M foundation model | as above | Accuracy | 93.83 ± 0.76% |
@@ -364,14 +367,14 @@ The Amma et al. number is as reproduced by Du et al.; I did not read the CHI pap
 | [Sivakumar et al.](https://arxiv.org/html/2410.20081v1) | 2024 | Same, personalized from random init | test, no LM / LM | CER | 15.38 ± 5.88% / 9.55 ± 5.16% |
 | [Sivakumar et al.](https://arxiv.org/html/2410.20081v1) | 2024 | Same, personalized by fine-tuning the generic model | test, no LM / LM | CER | 11.28 ± 4.45% / 6.95 ± 3.61% |
 
-**Mehlman et al. 2025** ([TMLR](https://arxiv.org/html/2507.22094)) report their own baseline TDS-ConvNet at 55.57% generic and 11.39% personalized CER. Those numbers equal the emg2qwerty *validation, no-LM* figures, so read this table as validation CER without a language model.
+**Mehlman et al. 2025** ([TMLR](https://arxiv.org/html/2507.22094)) quote the TDS-ConvNet baseline at 55.57% generic and 11.39% personalized CER. Those baseline numbers equal the emg2qwerty *validation, no-LM* figures, while Mehlman et al.'s transformer rows are *test* CER (checkpoint chosen on validation); LM use is not stated. The baseline row is therefore not directly comparable with the transformer rows.
 
 | Paper | Year | Method | Generic CER | Personalized CER |
 |---|---|---|---|---|
 | [Mehlman et al.](https://arxiv.org/html/2507.22094) | 2025 | TDS-ConvNet baseline (5.3M) | 55.57% | 11.39% |
 | [Mehlman et al.](https://arxiv.org/html/2507.22094) | 2025 | Tiny transformer (2.2M) | 35.9 ± 0.9% | 9.7 ± 0.13% |
 | [Mehlman et al.](https://arxiv.org/html/2507.22094) | 2025 | Large transformer (109M) | 30.5 ± 0.6% | 6.8 ± 0.07% |
-| [Mehlman et al.](https://arxiv.org/html/2507.22094) | 2025 | Tiny transformer distilled from Large | 31.9 ± 0.4% | not reported |
+| [Mehlman et al.](https://arxiv.org/html/2507.22094) | 2025 | Tiny transformer distilled from Large | 31.9 ± 0.4% | 8.6 ± 0.04% |
 
 Not comparable: [MyoText](https://arxiv.org/abs/2601.03098) (2026) reports 5.4% CER and 6.5% WER on 30 emg2qwerty users with finger classification + transformer decoding. Its protocol (generic or personalized, which split) is not stated in the abstract.
 
@@ -384,7 +387,7 @@ Not comparable: [MyoText](https://arxiv.org/abs/2601.03098) (2026) reports 5.4% 
 
 Metrics are mean joint-angle error / mean fingertip landmark distance. In the *tracking* task (initial pose given), vemg2pose reaches 7.7° / 10.3 mm on held-out users. [REACT](https://arxiv.org/abs/2605.30127) (2026) reports up to 3.9% lower angular error by adding under 45 s of per-user calibration. That is a personalized protocol, and the abstract gives no absolute numbers.
 
-### Generic Neuromotor Interface: discrete gestures, subject-wise 80/10/10 split
+### Generic Neuromotor Interface: discrete gestures, 80/10/10 split (TinyMyo describes it as 80/10/10 of each subject's data, not the official subject-wise split; *unverified*)
 | Paper | Year | Method | Protocol | Metric | Result |
 |---|---|---|---|---|---|
 | Kaifosh et al. LSTM, via [TinyMyo](https://arxiv.org/html/2512.15729v2) | 2025 | LSTM (6.4M) | Windowed inference (8 s window, 2 s stride) | Classification error rate | 0.1596 |

@@ -7,7 +7,7 @@ EOG records the small voltage changes on the skin around the eyes that happen wh
 **What is measured.** The eye carries a standing potential between the cornea (positive) and the retina (negative), so it behaves like an electrical dipole. When the eye rotates, the dipole rotates too, and electrodes near the eye see the voltage rise as the cornea approaches and fall as it moves away ([Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/); [López et al. 2018](https://ciencia.iscte-iul.pt/publications/development-of-an-eog-based-system-to-control-a-serious-game/53597)). Because EOG measures this potential and not an image, it **works with the eyes closed and during sleep** ([FAU eye-movement notes](https://www4.cs.fau.de/~wosch/fb/eye-movement.html)).
 
 **Channels and montages.**
-- **Horizontal EOG (hEOG):** electrodes at the outer corners (canthi) of the eyes, to the left and right. **Vertical EOG (vEOG):** electrodes above and below one eye. The classic setup uses four electrodes. The minimum workable setup uses three: one on the nose bridge and one between the eyebrows ([Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/)).
+- **Horizontal EOG (hEOG):** electrodes at the outer corners (canthi) of the eyes, to the left and right. **Vertical EOG (vEOG):** electrodes above and below one eye. The classic setup uses four electrodes. The minimum workable setup uses three: one on each side of the nose bridge and one between the eyebrows ([Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/)).
 - **Sleep (PSG):** the AASM recommends E1-M2 and E2-M2. E1 sits about 1 cm below the left outer canthus and E2 about 1 cm above the right one, both referenced to the mastoid ([AASM manual](https://learn.aasm.org/AssetListing/The-AASM-Manual-for-the-Scoring-of-Sleep-and-Associated-Events-4265/The-AASM-Manual-for-the-Scoring-of-Sleep-and-Associated-Events-6697); exact placement confirmed only through secondary sources, *unverified* against the manual itself).
 - **Forehead EOG:** 4 forehead channels in the SEED-VIG driving dataset ([SEED-VIG](https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html)).
 - **Glasses nose pads:** JINS MEME uses a 3-point EOG with electrodes on the nose bridge and both nose pads ([IEEE DataPort](https://ieee-dataport.org/keywords/eog-smartglasses-driving-wearable-sensors-driving-simulator); [JINS patent US9433369B2](https://patents.google.com/patent/US9433369)).
@@ -17,12 +17,12 @@ EOG records the small voltage changes on the skin around the eyes that happen wh
 
 | Property | Typical value | Source |
 |---|---|---|
-| Sensitivity | ~5–20 µV per degree of rotation | [Cornell ECE course page](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2005/dcc34/finalsite/design.html) (course project, weak source) |
+| Sensitivity | ~5–20 µV per degree of rotation | [Malmivuo & Plonsey, *Bioelectromagnetism* (1995), ch. 28](http://www.bem.fi/book/28/28.htm) |
 | Amplitude | usually < 500 µV | [Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/) |
 | Linear range | about ±20° (naso-temporal) to ±30° (bi-temporal) | [FAU](https://www4.cs.fau.de/~wosch/fb/eye-movement.html) |
 | Useful band | DC/0.01 Hz to ~30 Hz; common filters: high-pass 0.05–0.1 Hz, low-pass 10–60 Hz | [Cornell](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2005/dcc34/finalsite/design.html), [Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/) |
 | Coupling | Must be DC-coupled to hold a steady fixation; AC-coupled amplifiers lose it | [ADInstruments KB](https://www.adinstruments.com/support/knowledge-base/can-i-use-bio-amp-teaching-powerlab-record-electrooculography-eog-signals) |
-| Sampling rates seen in practice | 100 Hz (Sleep-EDF), 128 Hz (Bulling dataset), 200 Hz (JINS MEME) | [Sleep-EDF](https://physionet.org/content/sleep-edfx/1.0.0/), [Bulling dataset](https://perceptualui.org/research/datasets/RecognitionActivity), [IEEE DataPort](https://ieee-dataport.org/keywords/eog-smartglasses-driving-wearable-sensors-driving-simulator) |
+| Sampling rates seen in practice | 100 Hz (Sleep-EDF), 128 Hz (Bulling dataset), 200 Hz (JINS MEME) | [Sleep-EDF](https://physionet.org/content/sleep-edfx/1.0.0/), [Bulling dataset](https://doi.org/10.18419/darus-3135), [IEEE DataPort](https://ieee-dataport.org/keywords/eog-smartglasses-driving-wearable-sensors-driving-simulator) |
 | Electrodes | Wet Ag/AgCl (clinical); dry gold, textile, contactless (wearables) | [FAU](https://www4.cs.fau.de/~wosch/fb/eye-movement.html), [Ban 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9979786/), [ElectraSight](https://arxiv.org/abs/2412.14848) |
 | Main noise | Baseline drift, facial and jaw EMG, eyelid artifacts, motion, changes in the standing potential with lighting | [Chang 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6630230/), [FAU](https://www4.cs.fau.de/~wosch/fb/eye-movement.html) |
 
@@ -39,14 +39,14 @@ Only specs I could source are listed; "–" means not found.
 | [EOG100C](https://biopac.com/?p=15771) | BIOPAC | Dedicated EOG amplifier module, DC to 100 Hz, can output eye velocity directly | 1 per module | set by the MP data-acquisition unit | – | MP system | Saccade and nystagmus research | Sold |
 | [g.USBamp](https://www.gtec.at/product/g-usbamp-research/) | g.tec | General biosignal amplifier, DC-coupled, < 0.4 µV RMS noise | 16 monopolar / 8 bipolar | up to 38.4 kHz | 24-bit | USB 2.0 | EEG+EOG BCI | Sold |
 | [ActiveTwo](https://www.biosemi.com/faq/adjust_samplerate.htm) | BioSemi | EEG system with 8 external "EX" channels (often used for EOG) | up to 256 + 8 EX | 2–16 kHz | *unverified* | – | EEG with EOG references | Sold |
-| [BrainAmp ExG](https://www.brainproducts.com/solutions/brainamp/) | Brain Products | Bipolar ExG amplifier, DC–1000 Hz | *unverified* | up to 5 kHz | – | Fiber optic | EOG, EMG and ECG alongside EEG | Sold |
+| [BrainAmp ExG](https://www.brainproducts.com/solutions/brainamp/) | Brain Products | Bipolar ExG amplifier, DC–1000 Hz | 8 or 16 bipolar | up to 5 kHz | – | Fiber optic | EOG, EMG and ECG alongside EEG | Sold |
 | [Bio Amp (DC mode) / EOG Pod](https://www.adinstruments.com/support/knowledge-base/can-i-use-bio-amp-teaching-powerlab-record-electrooculography-eog-signals) | ADInstruments | Isolated bio amplifier with DC mode; the EOG Pod is for teaching | 1–8 | set by PowerLab | – | PowerLab | Teaching and physiology labs | Sold |
 
 **Clinical systems**
 
 | Device | Company | Type | Channels | Sampling rate | Resolution | Connectivity | Typical use | Status |
 |---|---|---|---|---|---|---|---|---|
-| [Grael PSG](https://www.compumedics.com.au/products/grael-psg) | Compumedics | Lab PSG amplifier | 29 total (13 referential + 6 differential + others) | up to 2048 Hz | 24-bit | Power over Ethernet | In-lab sleep studies | Sold |
+| [Grael PSG](https://www.compumedics.com.au/products/grael-psg) | Compumedics | Lab PSG amplifier | 13 referential + 6 differential + 2 RIP, plus other sensor inputs | up to 2048 Hz | 24-bit | Power over Ethernet | In-lab sleep studies | Sold |
 | [Nox A1s](https://www.medi-shop.gr/en/sleep-diagnostic-systems/nox-a1s-c1s-sleep-diagnostic-system-kit) | Nox Medical | Portable PSG, 10 unipolar inputs for EEG and EOG | 13 unipolar + 4 bipolar | output rate *unverified* (the vendor quotes a very high internal rate) | 24-bit (bipolar) | BLE 5.0, USB-C | Home and hospital PSG | Sold |
 | ENG systems | various | EOG electrodes around the eyes for caloric, positional and oculomotor tests | 2–4 | – | – | – | Vestibular testing; video-based VNG is the camera alternative | Both ENG and VNG are in clinical use ([source](https://hearinghealthmatters.org/dizzinessdepot/2014/eng-versus-vng-part/)) |
 
@@ -66,14 +66,14 @@ Only specs I could source are listed; "–" means not found.
 |---|---|---|---|---|---|---|---|---|
 | [Cyton](https://shop.openbci.com/products/cyton-biosensing-board-8-channel) | OpenBCI | ADS1299 board; EOG listed among supported signals | 8 | 250 Hz | 24-bit | RF dongle | Hobby and research BCI | $1,249 |
 | [Ganglion](https://docs.openbci.com/Ganglion/GanglionSpecs/) | OpenBCI | MCP3912 board | 4 | 200 Hz | 0.1788 µV/bit | BLE | Low-cost ExG | – |
-| [EOG sensor for BITalino](https://www.pluxbiosignals.com/products/electrooculography-eog-for-bitalino) | PLUX | Analog EOG sensor; datasheet values (gain 2040, 0.05–41 Hz) *unverified* | 1 | 1–1000 Hz (BITalino) | 10-bit (BITalino ADC, *unverified*) | BITalino BT/BLE | Teaching | €60 |
+| [EOG sensor for BITalino](https://www.pluxbiosignals.com/products/electrooculography-eog-for-bitalino) | PLUX | Analog EOG sensor; [datasheet](https://support.pluxbiosignals.com/wp-content/uploads/2021/11/eog-sensor-datasheet-rev.pdf): gain 2038, 0.05–41 Hz | 1 | 1–1000 Hz (BITalino) | 10-bit (BITalino ADC) | BITalino BT/BLE | Teaching | €60 |
 | [AD8232](https://www-cce.cldnet.analog.com/media/en/technical-documentation/data-sheets/ad8232.pdf) | Analog Devices | Single-lead ECG front-end chip (gain 100, 170 µA) that hobbyists repurpose for EOG | 1 | MCU-dependent | MCU-dependent | – | DIY | Its DC blocking removes slow EOG (fixations) |
 
 ## 3. Applications (domains)
 
 | Domain | How EOG is used | Examples | Maturity |
 |---|---|---|---|
-| Sleep staging | Two EOG leads are standard in PSG for detecting REM, since R&K 1968 and the AASM 2007 manual | Compumedics, Nox; EOG-only staging reaches macro-F1 ~0.70–0.75 ([Maiti 2023](https://arxiv.org/abs/2310.03757)) | **Clinical standard** |
+| Sleep staging | Two EOG leads are standard in PSG for detecting REM, since R&K 1968 and the AASM 2007 manual | Compumedics, Nox; EOG-only staging reaches macro-F1 ~0.69–0.75 ([Maiti 2023](https://arxiv.org/abs/2310.03757)) | **Clinical standard** |
 | EEG artifact removal | The EOG channel serves as a regression reference or helps label ICA components; deep models are trained on EOG-contaminated EEG | Gratton 1983, ICA (Jung 2000), ART, D4PM | **Standard in research** |
 | Vestibular testing | Electronystagmography records nystagmus during caloric and positional tests | ENG vs VNG ([source](https://hearinghealthmatters.org/dizzinessdepot/2014/eng-versus-vng-part/)) | **Clinical**, increasingly replaced by video |
 | Clinical ophthalmology | Light-peak to dark-trough (Arden) ratio measures retinal pigment epithelium function; ≥1.80 is normal; used to confirm Best disease | [EyeWiki](https://eyewiki.org/Electrooculogram), [ISCEV 2017](https://link.springer.com/10.1007/s10633-017-9573-2) | **Clinical, niche** |
@@ -81,7 +81,7 @@ Only specs I could source are listed; "–" means not found.
 | Wheelchair / robot control | Eye gestures mapped to motion commands | [Barea 2002](https://portalcientifico.uah.es/documentos/614e76ac68c341284de7859b?lang=en) | Research |
 | HCI, smart glasses, earables | Calibration-free eye gestures at milliwatt power | JINS MEME, [VergeIO](https://arxiv.org/abs/2507.02187), Wisear/Naqi | Early commercial |
 | VR/AR | EOG added to SSVEP inside VR headsets to raise bit rate | [Ha, Park, Im 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC8908008/) | Research |
-| Hybrid BCI | EOG narrows the SSVEP target set, or adds blink/brow commands to motor-imagery BCI | [Zhang 2023](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1103935/full) | Research |
+| Hybrid BCI | EOG narrows the SSVEP target set, or adds blink/brow commands to motor-imagery BCI (MI part *unverified*) | [Zhang 2023](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1103935/full) | Research |
 | Drowsiness / vigilance | Blink and slow-eye-movement features from forehead EOG, regressed against PERCLOS | [SEED-VIG](https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html), JINS MEME | Research; JINS sold fatigue features commercially |
 | Reading / activity / cognitive state | Saccade, fixation and blink statistics | [Bulling 2011](https://perceptualui.org/publications/bulling11_pami/) | Research |
 | Gaming | Games controlled by eye movements, often for motor rehab | [López et al. 2018](https://ciencia.iscte-iul.pt/publications/development-of-an-eog-based-system-to-control-a-serious-game/53597) | Research |
@@ -92,9 +92,9 @@ Only specs I could source are listed; "–" means not found.
 | Company | Country | Focus | Key product | Status 2025–2026 |
 |---|---|---|---|---|
 | JINS | Japan | EOG glasses | JINS MEME | Business-only since 2024; app support ended Aug 2025 ([source](https://www.fashionsnap.com/article/2024-03-13/jins-meme-close/)) |
-| Wisear → Naqi Logix | France → Canada | Earbud neural interface (Wisear demoed EOG) | Wisearphones / Naqi Neural Earbuds | Acquired by Naqi on 5 Jan 2026 ([source](https://www.trysignalbase.com/news/acquisitions/wisear-acquired-by-naqi-acquisition)); EOG prototype noted by [TechCrunch](https://techcrunch.com/2022/01/20/wisear/) |
-| AAVAA | Canada | Assistive biosignal control | Glasses and earbuds | On sale ([source](https://rehabpub.com/mobility/aavaa-launches-bci-technology-for-smart-glasses/)) |
-| Emteq Labs | UK | Facial sensing; **optical (OCO), not EOG** | OCOsense / Sense | Dev kit from Dec 2024 ([IEEE Spectrum](https://spectrum.ieee.org/glasses-health-tech)) |
+| Wisear → Naqi Logix | France → Canada | Earbud neural interface (Wisear demoed EOG) | Wisearphones / Naqi Neural Earbuds | Acquisition by Naqi announced 5 Feb 2026 ([source](https://www.trysignalbase.com/news/acquisitions/wisear-acquired-by-naqi-acquisition)); left/right eye-movement demo reported by [Skarred Ghost 2023](https://skarredghost.com/2023/07/07/wisear-hands-on-bmi/) |
+| AAVAA | Canada | Assistive biosignal control | Glasses and earbuds | Launched 2024; current sales status *unverified* ([source](https://rehabpub.com/mobility/aavaa-launches-bci-technology-for-smart-glasses/)) |
+| Emteq Labs | UK | Facial sensing; **optical (OCO), not EOG** | OCOsense / Sense | Available to commercial partners from Dec 2024 ([IEEE Spectrum](https://spectrum.ieee.org/glasses-health-tech)) |
 | Beacon Biosignals | USA | Sleep; the Dreem 3S is a **dry-EEG** headband | Dreem 3S | FDA 510(k) 2023 ([source](https://www.medtechdive.com/news/beacon-biosignals-fda-clearance-sleep-tracking-headband/693901/)) |
 | Compumedics / Nox Medical | Australia / Iceland | PSG with EOG | Grael, Nox A1s | Sold |
 | BIOPAC, g.tec, Brain Products, ADInstruments, OpenBCI, PLUX | various | EOG-capable amplifiers | see §2 | Sold |
@@ -125,9 +125,9 @@ These are foundational papers; I did not verify citation counts.
 |---|---|---|---|
 | [New clinical test of retinal function based upon the standing potential of the eye](https://pmc.ncbi.nlm.nih.gov/articles/PMC510228) | Arden, Barrada, Kelsey | Br J Ophthalmol 1962 | Introduced the Arden ratio and clinical EOG |
 | [A Manual of Standardized Terminology… Sleep Stages](https://search.worldcat.org/oclc/2518321) | Rechtschaffen, Kales | 1968 | Made two EOG leads standard in sleep scoring |
-| [Survey of eye movement recording methods](https://link.springer.com/article/10.3758/BF03201553) | Young, Sheena | Behav Res Methods 1975 | Classic comparison of EOG with other eye-tracking methods |
+| [Survey of eye movement recording methods](https://link.springer.com/article/10.3758/BF03201553) | Young, Sheena | Behav Res Methods Instrum 1975 | Classic comparison of EOG with other eye-tracking methods |
 | [A new method for off-line removal of ocular artifact](https://pubmed.ncbi.nlm.nih.gov/6187540/) | Gratton, Coles, Donchin | EEG Clin Neurophysiol 1983 | Regression-based EOG correction (EMCP) |
-| [Removal of ocular artifact from the EEG: a review](https://busqueda.bvsalud.org/portal/resource/es/mdl-11018488) | Croft, Barry | Neurophysiol Clin 2000 | The standard review of EOG correction |
+| [Removal of ocular artifact from the EEG: a review](https://pubmed.ncbi.nlm.nih.gov/10740792/) | Croft, Barry | Neurophysiol Clin 2000 | The standard review of EOG correction |
 | [Removing EEG artifacts by blind source separation](https://www.cambridge.org/core/journals/psychophysiology/article/abs/removing-electroencephalographic-artifacts-by-blind-source-separation/2548D35629CAE17E6956C2FFF1B6C8AB) | Jung, Makeig et al. | Psychophysiology 2000 | ICA for eye artifacts, the basis of EEGLAB practice |
 | [System for assisted mobility using eye movements based on EOG](https://portalcientifico.uah.es/documentos/614e76ac68c341284de7859b?lang=en) | Barea, Boquete, Mazo, López | IEEE TNSRE 2002 | Landmark EOG wheelchair |
 | [AASM Manual for the Scoring of Sleep](https://learn.aasm.org/AssetListing/The-AASM-Manual-for-the-Scoring-of-Sleep-and-Associated-Events-4265/The-AASM-Manual-for-the-Scoring-of-Sleep-and-Associated-Events-6697) | AASM | 2007 → current | The current PSG EOG standard |
@@ -138,13 +138,13 @@ These are foundational papers; I did not verify citation counts.
 ## 7. New achievements (2023–2026)
 
 - **SleepFM** (Nature Medicine 2026) is trained on 585k hours of PSG, with EOG included as part of brain activity. It predicts 130 conditions with C-index ≥ 0.75 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920147/)).
-- **VergeIO** (2025): depth (vergence) eye gestures on glasses, 97% accuracy on unseen users, no calibration, 3 mW ([arXiv](https://arxiv.org/abs/2507.02187)).
+- **VergeIO** (2025): depth (vergence) eye gestures on glasses, 97% accuracy on unseen users, no calibration, 3 mW analog front end ([arXiv](https://arxiv.org/abs/2507.02187)).
 - **ElectraSight** (2024): 92% on 6 classes and 81% on 10 classes, 7.75 mW, more than 3 days on a 175 mAh battery ([arXiv](https://arxiv.org/abs/2412.14848)).
 - **earEOG** (2025): around-ear EOG reaches saccade r=0.99 horizontally, but vertical tracking is poor ([arXiv](https://arxiv.org/abs/2506.07193)).
 - **SSVEP+EOG speller** (2023): 94.75% accuracy and 108.6 bits/min ([Frontiers](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1103935/full)).
 - **Soft headband** (2023): 4 dry electrodes plus a CNN, 98.3% on 6 classes ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC9979786/)).
 - **Artifact removal:** ART, a transformer ([arXiv 2024](https://arxiv.org/abs/2409.07326)); D4PM, a diffusion model that claims state of the art on EOG ([arXiv 2025](https://arxiv.org/abs/2509.14302)); EEGPARnet, CC 0.967 on EEGdenoiseNet EOG ([project page](https://lmerin.owlstown.net/projects/6870-eegparnet)).
-- **Industry:** Naqi wins CES 2026 Best of Innovation and acquires Wisear (Jan 2026). STMicroelectronics is granted EP4173567B1 (Dec 2025).
+- **Industry:** Naqi wins CES 2026 Best of Innovation and acquires Wisear (Feb 2026). STMicroelectronics is granted EP4173567B1 (Dec 2025).
 
 ## 8. Current state of the field
 
@@ -172,11 +172,11 @@ Full specifications for each dataset, and tables of published results on them, a
 
 | Dataset | Content | Size | Link |
 |---|---|---|---|
-| Sleep-EDF Expanded | PSG with EEG, EOG and chin EMG at 100 Hz, plus hypnograms | 197 nights | [PhysioNet](https://physionet.org/content/sleep-edfx/1.0.0/) |
+| Sleep-EDF Expanded | PSG with EEG and EOG at 100 Hz, chin EMG, plus hypnograms | 197 nights | [PhysioNet](https://physionet.org/content/sleep-edfx/1.0.0/) |
 | SEED-VIG | 17-channel EEG, 4-channel forehead EOG, PERCLOS labels, simulated driving | 23 subjects, ~2 h each ([arXiv 2408.13929](https://arxiv.org/abs/2408.13929)) | [BCMI](https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html) |
 | EEGdenoiseNet | Clean EEG, EOG and EMG segments for building synthetic mixtures | 4,514 EEG / 3,400 EOG / 5,598 EMG segments | [G-Node](https://gin.g-node.org/NCClab/EEGdenoiseNet) |
 | ALS locked-in EEG+EOG | Auditory EOG speller sessions | 4 patients | [Sci Data 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC7801642/) |
-| Bulling EOG activity | hEOG and vEOG at 128 Hz, 5 office activities | 8 people, ~8 h | [perceptualui.org](https://perceptualui.org/research/datasets/RecognitionActivity) |
+| Bulling EOG activity | hEOG and vEOG at 128 Hz, 5 office activities | 8 people, ~8 h | [DaRUS](https://doi.org/10.18419/darus-3135) |
 | Real & simulated driving | JINS MEME ES_R, 4-channel EOG at 200 Hz | 51 people | [IEEE DataPort](https://ieee-dataport.org/keywords/eog-smartglasses-driving-wearable-sensors-driving-simulator) |
 | DEAP | 32-channel EEG plus hEOG, vEOG and other peripheral signals; emotion ratings | 32 people × 40 videos | [QMUL](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/readme.html) |
 | EEGEyeNet | 128-channel EEG plus video eye tracking (not EOG; useful for gaze from EEG and EOG-like signals) | 356 people, 47+ h | [NeurIPS 2021](https://neurips.cc/virtual/2021/22756) |
@@ -215,7 +215,7 @@ Stars and dates checked via the GitHub API on 2026-10-10.
 | [rthapa84/sleepfm-codebase](https://github.com/rthapa84/sleepfm-codebase) | Earlier SleepFM version (ICML 2024) | Python | 179 | 2024-06 | MIT |
 | [perslev/U-Time](https://github.com/perslev/U-Time) | U-Time and U-Sleep, fully convolutional sleep stagers that run on PSG channels including EOG | Python | 319 | 2026-06 | MIT |
 | [raphaelvallat/yasa](https://github.com/raphaelvallat/yasa) | PSG analysis: automatic staging (optional EOG input), REM detection, spindles | Python | 589 | 2026-10 | BSD-3-Clause |
-| [KiranKGR/ScoreREMGUI](https://github.com/KiranKGR/ScoreREMGUI) | MATLAB GUI for annotating and quantifying rapid eye movements in REM sleep | MATLAB | 3 | 2026-06 | GPL-3.0 |
+| [KiranKGR/ScoreREMGUI](https://github.com/KiranKGR/ScoreREMGUI) | MATLAB GUI for annotating and quantifying rapid eye movements in REM sleep | none listed | 3 | 2026-06 | GPL-3.0 |
 
 **Eye-gesture / HCI / hardware**
 
