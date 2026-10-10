@@ -198,3 +198,62 @@ These are field-defining works. Citation counts are left out because I could not
 | GRABMyo | Forearm + wrist sEMG, 16 gestures, 3 days | 43 subjects, 28 used ch @ 2048 Hz, 9.4 GB | [PhysioNet](https://physionet.org/content/grabmyo/1.1.0/) |
 | EMG-EPN-612 | Myo armband, 5 gestures + rest | 612 users (306 train / 306 test) | [Zenodo](https://zenodo.org/record/4023305) |
 | EMGBench | Cross-subject benchmark over 9 datasets + new HD-EMG set | 9 datasets | [emgbench.github.io / arXiv](https://arxiv.org/pdf/2410.23625) |
+
+## 10. GitHub repositories
+
+Stars and dates checked via the GitHub API on 2026-10-10.
+
+"Custom" means GitHub could not detect a standard license (`NOASSERTION`), so read the repo's LICENSE file before reusing the code. "—" means no license file or no detected language.
+
+**Toolkits and libraries**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [libemg/libemg](https://github.com/libemg/libemg) | API for building real-time EMG interactions and running offline analysis (from the Scheme/Phinyomark group). Start here for gesture-control prototypes | Python | 80 | 2026-10 | MIT |
+| [neuropsychology/NeuroKit](https://github.com/neuropsychology/NeuroKit) | NeuroKit2: general physiological signal toolbox with EMG cleaning, amplitude and activation detection, alongside ECG/EOG/EDA | Python | 2392 | 2026-10 | MIT |
+| [scientisst/BioSPPy](https://github.com/scientisst/BioSPPy) | Biosignal processing (EMG onset detection, filtering). Maintained fork of the original, now archived [PIA-Group/BioSPPy](https://github.com/PIA-Group/BioSPPy) (645 stars) | Python | 124 | 2026-09 | Custom |
+| [pluxbiosignals/biosignalsnotebooks](https://github.com/pluxbiosignals/biosignalsnotebooks) | Tutorial notebooks and helpers for EMG/ECG processing, built around PLUX/BITalino hardware | Jupyter Notebook | 95 | 2026-05 | MIT |
+| [aalhossary/pyemgpipeline](https://github.com/aalhossary/pyemgpipeline) | Classic biomechanics EMG pipeline: DC removal, band-pass, rectification, envelope, amplitude normalization | Python | 12 | 2022-04 | GPL-3.0 |
+| [GiacomoValliPhD/openhdemg](https://github.com/GiacomoValliPhD/openhdemg) | Analysis of HD-sEMG and decomposed motor units (firing properties, MU tracking across sessions) | Python | 67 | 2026-10 | BSD-3-Clause |
+| [simonavrillon/MUedit](https://github.com/simonavrillon/MUedit) | App to decompose HD-EMG into motor units and manually edit the pulse trains | MATLAB | 52 | 2026-04 | GPL-3.0 |
+| [The-Motor-Unit/EMGdecomPy](https://github.com/The-Motor-Unit/EMGdecomPy) | Python package for blind-source-separation decomposition of multichannel EMG into motor units | Jupyter Notebook | 33 | 2022-06 | GPL-3.0 |
+| [neuromechanist/emg2mu](https://github.com/neuromechanist/emg2mu) | GPU-accelerated (PyTorch) HD-EMG motor-unit decomposition | Jupyter Notebook | 17 | 2025-02 | Custom |
+| [CEINMS/CEINMS](https://github.com/CEINMS/CEINMS) | Calibrated EMG-informed neuromusculoskeletal modelling: estimates muscle forces and joint moments from EMG with OpenSim models | C++ | 33 | 2026-08 | Apache-2.0 |
+
+**Models and papers with code**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [facebookresearch/emg2qwerty](https://github.com/facebookresearch/emg2qwerty) | Official emg2qwerty dataset and CTC typing baselines (NeurIPS 2024). Archived, so no further updates | Python | 142 | 2025-06 | Custom, archived |
+| [facebookresearch/emg2pose](https://github.com/facebookresearch/emg2pose) | Official emg2pose dataset and pose-regression baselines (vemg2pose, NeuroPose) | Python | 281 | 2024-12 | Custom |
+| [facebookresearch/generic-neuromotor-interface](https://github.com/facebookresearch/generic-neuromotor-interface) | Data and training code for Meta's Nature 2025 wristband paper (discrete gestures, handwriting, wrist) | Jupyter Notebook | 266 | 2025-08 | Custom (data CC-BY-NC-4.0) |
+| [pulp-bio/BioFoundation](https://github.com/pulp-bio/BioFoundation) | Biosignal foundation models, including TinyMyo (3.6M-parameter sEMG transformer, arXiv 2512.15729) | Python | 142 | 2026-09 | Apache-2.0 |
+| [UlysseCoteAllard/MyoArmbandDataset](https://github.com/UlysseCoteAllard/MyoArmbandDataset) | Dataset and code for Côté-Allard et al. 2019 transfer-learning paper (Myo armband). Older Theano stack | Python (GitHub detects "OpenEdge ABL") | 98 | 2022-02 | GPL-3.0 |
+| [NsquaredLab/MyoGestic](https://github.com/NsquaredLab/MyoGestic) | Official MyoGestic framework (Sci. Adv. 2025) for training and testing real-time myocontrol decoders | Python | 32 | 2026-08 | GPL-3.0 |
+
+**Benchmarks and dataset loaders**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [jehanyang/emgbench](https://github.com/jehanyang/emgbench) | Official EMGBench (NeurIPS 2024): cross-subject generalization and adaptation benchmark over 9 datasets | Python | 24 | 2025-09 | MIT |
+| [Lif3line/nina_helper_package_mk2](https://github.com/Lif3line/nina_helper_package_mk2) | Helpers for loading and windowing Ninapro DB1/DB2 | Python | 21 | 2022-12 | MIT |
+| [Zeng-Jia/Ninapro-dataset-processing](https://github.com/Zeng-Jia/Ninapro-dataset-processing) | Ninapro preprocessing flow plus a PyTorch dataloader | Jupyter Notebook | 35 | 2021-09 | — |
+
+**Hardware and firmware**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [brainflow-dev/brainflow](https://github.com/brainflow-dev/brainflow) | Device-agnostic API to stream EEG/EMG/ECG from many boards (OpenBCI and others), with bindings for many languages | C++ | 1770 | 2026-10 | Custom |
+| [OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI) | Desktop app for Cyton/Ganglion, including an EMG widget | HTML | 965 | 2026-04 | MIT |
+| [OpenBCI/OpenBCI_Cyton_Library](https://github.com/OpenBCI/OpenBCI_Cyton_Library) | Firmware libraries for the Cyton (ADS1299) board | C++ | 126 | 2025-07 | MIT |
+| [PerlinWarp/pyomyo](https://github.com/PerlinWarp/pyomyo) | Python driver for the discontinued Myo armband, giving raw 200 Hz EMG without the official SDK | Python | 189 | 2026-07 | MIT |
+| [thalmiclabs/myo-bluetooth](https://github.com/thalmiclabs/myo-bluetooth) | Official BLE protocol specification for the Myo | C | 145 | 2020-09 | Apache-2.0, archived |
+| [AdvancerTechnologies/MyoWare_v1_MuscleSensor](https://github.com/AdvancerTechnologies/MyoWare_v1_MuscleSensor) | Example code and docs for the MyoWare 1.0 sensor. Old; no MyoWare 2.0 repo found | Processing | 93 | 2016-07 | Apache-2.0 |
+| [OpenBionics/Prosthetic-Hands](https://github.com/OpenBionics/Prosthetic-Hands) | Open-source low-cost (<$200) 3D-printable prosthetic hand designs from the academic OpenBionics initiative (not the UK company Open Bionics) | TeX | 189 | 2018-02 | Custom |
+| [grablab/openhand-hardware](https://github.com/grablab/openhand-hardware) | Yale OpenHand CAD designs. A robot-hand platform, useful as an EMG-teleoperation target | Python | 237 | 2025-03 | Custom |
+
+**Curated lists**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [x-labs-xyz/awesome-emg-data](https://github.com/x-labs-xyz/awesome-emg-data) | List of public raw-EMG datasets with their papers. A good way to find data beyond section 9 | — | 102 | 2024-02 | — |

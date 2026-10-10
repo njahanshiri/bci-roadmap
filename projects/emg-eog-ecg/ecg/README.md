@@ -219,3 +219,64 @@ I could not verify citation counts, so none are given.
 | PhysioNet 2015 | ICU multi-signal alarm segments | 1,250 alarms | [PhysioNet](https://physionet.org/content/challenge-2015/) |
 | WESAD | Chest ECG at 700 Hz plus wrist signals; stress and amusement | 15 subjects | [UCI](https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection) |
 | EchoNext | ECGs paired with echo-derived labels | Released with the *Nature* 2025 paper | [NYP](https://www.nyp.org/news/can-ai-detect-hidden-heart-disease) |
+
+## 10. GitHub repositories
+
+Stars and dates checked via the GitHub API on 2026-10-10. "Other" means GitHub could not identify the license; check the repo before reusing code.
+
+**Toolkits and libraries**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [MIT-LCP/wfdb-python](https://github.com/MIT-LCP/wfdb-python) | Reads and writes PhysioNet WFDB files and annotations. Use it first for any PhysioNet dataset. | Python | 853 | 2026-06 | MIT |
+| [neuropsychology/NeuroKit](https://github.com/neuropsychology/NeuroKit) | NeuroKit2: ECG cleaning, R-peaks, delineation and HRV, plus EDA, EMG, EOG and RSP. The best general starting point for multimodal biosignals. | Python | 2,392 | 2026-10 | MIT |
+| [scientisst/BioSPPy](https://github.com/scientisst/BioSPPy) | Maintained fork of BioSPPy: filtering, R-peaks and heart rate for ECG, PPG, EDA and EMG. The original [PIA-Group/BioSPPy](https://github.com/PIA-Group/BioSPPy) is archived. | Python | 124 | 2026-09 | Other |
+| [paulvangentcom/heartrate_analysis_python](https://github.com/paulvangentcom/heartrate_analysis_python) | HeartPy: heart rate and HRV from noisy PPG or ECG, including wearable data | Python | 1,151 | 2025-12 | MIT |
+| [berndporr/py-ecg-detectors](https://github.com/berndporr/py-ecg-detectors) | Reference QRS detectors (Pan-Tompkins, Hamilton, Christov, wavelet and others) for benchmarking R-peak detection | Python | 391 | 2024-02 | GPL-3.0 |
+| [PGomes92/pyhrv](https://github.com/PGomes92/pyhrv) | Full HRV toolbox: time, frequency and nonlinear measures, with reports | Python | 341 | 2026-06 | BSD-3-Clause |
+| [Aura-healthcare/hrv-analysis](https://github.com/Aura-healthcare/hrv-analysis) | Lightweight HRV feature extraction from RR intervals, for example from chest-strap data | Python | 460 | 2026-10 | GPL-3.0 |
+| [embodied-computation-group/systole](https://github.com/embodied-computation-group/systole) | Cardiac signal analysis and synchrony for psychophysiology and brain–heart (interoception) experiments | Python | 94 | 2026-10 | Apache-2.0 |
+| [marianux/ecg-kit](https://github.com/marianux/ecg-kit) | MATLAB toolbox for ECG delineation and beat classification; dated but still cited | MATLAB | 295 | 2020-02 | GPL-2.0 |
+| [DeepPSP/torch_ecg](https://github.com/DeepPSP/torch_ecg) | PyTorch ECG models, preprocessing and dataset readers for many PhysioNet challenges | Python | 272 | 2026-10 | MIT |
+| [alphanumericslab/ecg-image-kit](https://github.com/alphanumericslab/ecg-image-kit) | Synthesizes and digitizes ECG images, for turning paper and scanned ECGs into signals | Jupyter Notebook | 165 | 2024-10 | BSD-3-Clause |
+
+**Foundation models and papers with code**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [bowang-lab/ecg-fm](https://github.com/bowang-lab/ecg-fm) | ECG-FM open-weight transformer, pretrained on 1.5M ECGs (JAMIA Open 2025). Fine-tune it on small labeled sets. | Python | 320 | 2026-01 | MIT |
+| [PKUDigitalHealth/ECGFounder](https://github.com/PKUDigitalHealth/ECGFounder) | ECGFounder (NEJM AI 2025): 10M+ ECGs, 150 labels, 12-lead and single-lead checkpoints | Python | 158 | 2026-02 | MIT |
+| [Edoar-do/HuBERT-ECG](https://github.com/Edoar-do/HuBERT-ECG) | HuBERT-ECG self-supervised model pretrained on 9.1M ECGs | Shell | 82 | 2026-10 | Other |
+| [antonior92/automatic-ecg-diagnosis](https://github.com/antonior92/automatic-ecg-diagnosis) | Ribeiro et al., Nat Commun 2020: ResNet trained on CODE, with weights. A strong 12-lead baseline. | Python | 456 | 2023-03 | MIT |
+| [antonior92/ecg-age-prediction](https://github.com/antonior92/ecg-age-prediction) | ECG-age model from the same group; ECG-estimated age predicts mortality | Python | 99 | 2023-09 | MIT |
+| [awni/ecg](https://github.com/awni/ecg) | Hannun et al., Nat Med 2019: the single-lead arrhythmia deep network | Python | 821 | 2023-03 | GPL-3.0 |
+
+EchoNext's dataset is on [PhysioNet](https://physionet.org/content/echonext/) under restricted access. I found no official EchoNext code repo on GitHub. AnyECG had no public repo at the time of checking.
+
+**Benchmarks and dataset loaders**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [helme/ecg_ptbxl_benchmarking](https://github.com/helme/ecg_ptbxl_benchmarking) | Official PTB-XL benchmark (Strodthoff et al.): splits, tasks and baselines. Use it to compare 12-lead models. | Python | 317 | 2025-06 | GPL-3.0 |
+| [AI4HealthUOL/ecg-fm-benchmarking](https://github.com/AI4HealthUOL/ecg-fm-benchmarking) | Benchmarks ECG foundation models on 12 public datasets and 26 tasks | Python | 56 | 2026-06 | None stated |
+| [physionetchallenges/python-example-2025](https://github.com/physionetchallenges/python-example-2025) | Official starter code for the 2025 Chagas challenge: data loading, scoring, submission format | Python | 33 | 2025-06 | BSD-2-Clause |
+| [physionetchallenges/python-classifier-2021](https://github.com/physionetchallenges/python-classifier-2021) | Official starter code for the 2021 reduced-lead (12/6/4/3/2-lead) challenge | Python | 33 | 2021-08 | BSD-2-Clause |
+| [MIT-LCP/mimic-code](https://github.com/MIT-LCP/mimic-code) | Community code for MIMIC databases; use it to link MIMIC-IV-ECG to clinical labels | Jupyter Notebook | 3,407 | 2026-09 | MIT |
+
+**Wearable, hardware and open devices**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [polarofficial/polar-ble-sdk](https://github.com/polarofficial/polar-ble-sdk) | Official SDK for streaming raw ECG (130 Hz) and RR intervals from the Polar H10 | Swift | 751 | 2026-10 | Other |
+| [brainflow-dev/brainflow](https://github.com/brainflow-dev/brainflow) | One API to stream EEG, EMG and ECG from many boards (OpenBCI and others). Good for multimodal passive-BCI rigs. | C++ | 1,770 | 2026-10 | Other |
+| [OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI) | Acquisition GUI for Cyton and Ganglion, which can record ECG ([setup guide](https://docs.openbci.com/GettingStarted/Biosensing-Setups/ECGSetup/)) | HTML | 965 | 2026-04 | MIT |
+| [sparkfun/AD8232_Heart_Rate_Monitor](https://github.com/sparkfun/AD8232_Heart_Rate_Monitor) | Arduino and Processing examples and hardware files for the AD8232 single-lead board | Processing | 224 | 2024-11 | Other |
+
+The Movesense device and mobile libraries are hosted on [Bitbucket](https://www.movesense.com/news/2017/10/movesense-device-library-now-public-bitbucket/), not GitHub, so they are not listed here.
+
+**Curated lists**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [PierreElias/IntroECG](https://github.com/PierreElias/IntroECG) | Starter resource library and notebooks for deep learning on ECGs, from an EchoNext author | Jupyter Notebook | 188 | 2026-04 | None stated |
+| [ShijianXu/awesome-ECG](https://github.com/ShijianXu/awesome-ECG) | Small paper list; I found no large, well-maintained "awesome-ECG" list | n/a | 5 | 2024-06 | None stated |

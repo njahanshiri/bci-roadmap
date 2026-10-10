@@ -178,3 +178,65 @@ These are foundational papers; I did not verify citation counts.
 | Real & simulated driving | JINS MEME ES_R, 4-channel EOG at 200 Hz | 51 people | [IEEE DataPort](https://ieee-dataport.org/keywords/eog-smartglasses-driving-wearable-sensors-driving-simulator) |
 | DEAP | 32-channel EEG plus hEOG, vEOG and other peripheral signals; emotion ratings | 32 people × 40 videos | [QMUL](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/readme.html) |
 | EEGEyeNet | 128-channel EEG plus video eye tracking (not EOG; useful for gaze from EEG and EOG-like signals) | 356 people, 47+ h | [NeurIPS 2021](https://neurips.cc/virtual/2021/22756) |
+
+## 10. GitHub repositories
+
+Stars and dates checked via the GitHub API on 2026-10-10.
+
+**Toolkits and libraries**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [neuropsychology/NeuroKit](https://github.com/neuropsychology/NeuroKit) | NeuroKit2. Has EOG functions for cleaning and blink detection next to ECG/EMG/EDA. The quickest way to get started with EOG in Python | Python | 2,392 | 2026-10 | MIT |
+| [mne-tools/mne-python](https://github.com/mne-tools/mne-python) | The standard M/EEG library. Its EOG tools find blink and saccade events, build EOG epochs and flag ICA components that match the EOG channel | Python | 3,540 | 2026-10 | BSD-3-Clause |
+| [scientisst/BioSPPy](https://github.com/scientisst/BioSPPy) | General biosignal toolbox, maintained fork of the original BioSPPy ([PIA-Group/BioSPPy](https://github.com/PIA-Group/BioSPPy), archived, 645 stars) | Python | 124 | 2026-09 | NOASSERTION |
+| [brainflow-dev/brainflow](https://github.com/brainflow-dev/brainflow) | One API for streaming data from many biosensor boards (OpenBCI and others). Use it to acquire EOG from low-cost hardware | C++ | 1,770 | 2026-10 | NOASSERTION |
+| [sccn/eeglab](https://github.com/sccn/eeglab) | MATLAB environment where ICA-based removal of eye artifacts became standard practice | MATLAB | 800 | 2026-09 | NOASSERTION |
+
+**EEG ocular-artifact removal**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [ncclabsustech/EEGdenoiseNet](https://github.com/ncclabsustech/EEGdenoiseNet) | Benchmark of clean EEG, EOG and EMG segments plus baseline networks. The usual starting point for deep-learning EOG removal | Jupyter Notebook | 257 | 2023-07 | MIT |
+| [CNElab-Plus/ArtifactRemovalTransformer](https://github.com/CNElab-Plus/ArtifactRemovalTransformer) | Official code for ART, the transformer for multichannel EEG denoising (see §7) | Python | 12 | 2024-11 | none listed |
+| [sccn/ICLabel](https://github.com/sccn/ICLabel) | EEGLAB plugin that labels ICA components, including an "eye" class | MATLAB | 76 | 2026-10 | BSD-2-Clause |
+| [mne-tools/mne-icalabel](https://github.com/mne-tools/mne-icalabel) | Python port of ICLabel for MNE | Python | 124 | 2026-10 | BSD-3-Clause |
+| [nbara/python-meegkit](https://github.com/nbara/python-meegkit) | Denoising toolkit (ASR, DSS and others). Use it for artifact removal without training a model | Python | 230 | 2026-08 | BSD-3-Clause |
+| [DiGyt/asrpy](https://github.com/DiGyt/asrpy) | Artifact Subspace Reconstruction for MNE data | Jupyter Notebook | 66 | 2026-08 | BSD-3-Clause |
+| [autoreject/autoreject](https://github.com/autoreject/autoreject) | Automatically rejects or repairs bad trials and sensors; usually paired with ICA for eye artifacts | Python | 162 | 2026-10 | BSD-3-Clause |
+
+**Sleep staging with EOG**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [zou-group/sleepfm-clinical](https://github.com/zou-group/sleepfm-clinical) | Official SleepFM (Nature Medicine) code and checkpoints. The PSG foundation model takes EEG+EOG as "brain activity" input | Python | 736 | 2026-03 | NOASSERTION |
+| [rthapa84/sleepfm-codebase](https://github.com/rthapa84/sleepfm-codebase) | Earlier SleepFM version (ICML 2024) | Python | 179 | 2024-06 | MIT |
+| [perslev/U-Time](https://github.com/perslev/U-Time) | U-Time and U-Sleep, fully convolutional sleep stagers that run on PSG channels including EOG | Python | 319 | 2026-06 | MIT |
+| [raphaelvallat/yasa](https://github.com/raphaelvallat/yasa) | PSG analysis: automatic staging (optional EOG input), REM detection, spindles | Python | 589 | 2026-10 | BSD-3-Clause |
+| [KiranKGR/ScoreREMGUI](https://github.com/KiranKGR/ScoreREMGUI) | MATLAB GUI for annotating and quantifying rapid eye movements in REM sleep | MATLAB | 3 | 2026-06 | GPL-3.0 |
+
+**Eye-gesture / HCI / hardware**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [OpenEarable/open-earable-ExG](https://github.com/OpenEarable/open-earable-ExG) | Hardware (CAD, EasyEDA) and code for the OpenEarable ExG ear biopotential board (UbiComp '24) | C | 7 | 2024-07 | none listed |
+| [zx-explorer/VergeIO](https://github.com/zx-explorer/VergeIO) | Official code for VergeIO, the depth-aware EOG eye gestures on glasses | none listed | 0 | 2026-07 | none listed |
+| [OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI) | Desktop app for Cyton and Ganglion boards. The easiest way to view raw EOG from DIY hardware | HTML | 965 | 2026-04 | MIT |
+| [jins-meme/ES_R-Development-Kit](https://github.com/jins-meme/ES_R-Development-Kit) | Official JINS MEME ES_R academic development kit (Windows, Android, Mac) | C# | 19 | 2026-10 | NOASSERTION |
+| [jins-meme/JinsMemeSDK-Sample-Android](https://github.com/jins-meme/JinsMemeSDK-Sample-Android) | Consumer-SDK sample app for JINS MEME (archived) | Java | 12 | 2021-10 | MIT |
+
+**Vigilance / emotion / datasets**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [ardkastrati/EEGEyeNet](https://github.com/ardkastrati/EEGEyeNet) | Benchmark code for predicting gaze from EEG (NeurIPS 2021 dataset) | Python | 49 | 2021-11 | MIT |
+| [dttutty/SEED-VIG-CNN](https://github.com/dttutty/SEED-VIG-CNN) | Community (unofficial) model fusing EEG and forehead-EOG features to regress PERCLOS on SEED-VIG | Python | 30 | 2026-07 | none listed |
+
+**Curated lists**
+
+| Repo | What it does / when to use it | Language | Stars | Last update | License |
+|---|---|---|---|---|---|
+| [NeuroTechX/awesome-bci](https://github.com/NeuroTechX/awesome-bci) | Broad BCI resource list | – | 1,548 | 2026-10 | none listed |
+| [guxiao0822/Awesome-Biosignal-Foundation-Model](https://github.com/guxiao0822/Awesome-Biosignal-Foundation-Model) | Foundation models, datasets and tools for biosignals | – | 145 | 2026-03 | none listed |
+| [BosonHwang/awesome-biosignals](https://github.com/BosonHwang/awesome-biosignals) | AI papers on physiological signals | – | 90 | 2026-08 | none listed |
+| [eyes-on-disabilities/awesome-eye-tracking](https://github.com/eyes-on-disabilities/awesome-eye-tracking) | Eye- and head-tracking software and products with an accessibility focus (mirror of a Codeberg repo) | – | 26 | 2026-04 | none listed |
