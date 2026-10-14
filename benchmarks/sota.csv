@@ -1,0 +1,76 @@
+dataset,protocol,metric,value,std,model,our_model,paper,year,source,flags
+BNCI2014_001,standard,kappa,0.57,,FBCSP + Naive Bayes Parzen (competition winner),,Ang et al.,2008,https://www.bbci.de/competition/iv/results/,
+BNCI2014_001,standard,kappa,0.70,,EEG-TCNet (fixed hyperparameters),EEG-TCNet,Ingolfsson et al.,2020,https://arxiv.org/abs/2006.00622,
+BNCI2014_001,standard,kappa,0.7155,,EEG Conformer,EEGConformer,Song et al.,2023,https://ieeexplore.ieee.org/document/9991178,best test-epoch selection in released code
+BNCI2014_001,standard,accuracy,0.737,,Shallow ConvNet (0-38 Hz),ShallowConvNet,Schirrmeister et al.,2017,https://arxiv.org/abs/1703.05051,
+BNCI2014_001,standard,accuracy,0.7735,,EEG-TCNet (fixed hyperparameters),,Ingolfsson et al.,2020,https://arxiv.org/abs/2006.00622,
+BNCI2014_001,standard,accuracy,0.7866,,EEG Conformer (with augmentation),,Song et al.,2023,https://ieeexplore.ieee.org/document/9991178,best test-epoch selection in released code
+BNCI2014_001,standard,accuracy,0.7039,,EEGNet (TCFormer rerun; no augmentation),EEGNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.6050,,ShallowNet (TCFormer rerun; no augmentation),,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.7562,,EEG-TCNet (TCFormer rerun; no augmentation),EEG-TCNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.7070,,EEG Conformer (TCFormer rerun; no augmentation),EEGConformer,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.8340,,ATCNet (TCFormer rerun; no augmentation),ATCNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.8306,,TCFormer (no augmentation),TCFormer,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,standard,accuracy,0.8479,,TCFormer (with augmentation),,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,data augmentation
+BNCI2014_001,cross_subject,accuracy,0.5201,,EEGNet (LOSO rerun),EEGNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,accuracy,0.4883,,ShallowNet (LOSO rerun),ShallowConvNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,accuracy,0.5509,,EEG-TCNet (LOSO rerun),EEG-TCNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,accuracy,0.4544,,EEG Conformer (LOSO rerun),EEGConformer,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,accuracy,0.6005,,ATCNet (LOSO rerun),ATCNet,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,accuracy,0.6244,,TCFormer (LOSO; no augmentation),TCFormer,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+BNCI2014_001,cross_subject,balanced_accuracy,0.5846,,EEGPT (linear probe),,Wang et al. (EEGPT),2024,https://papers.neurips.cc/paper_files/paper/2024/file/4540d267eeec4e5dbd9dae9448f0b739-Paper-Conference.pdf,linear probe (ours: full fine-tuning)
+BNCI2014_001,cross_subject,balanced_accuracy,0.5613,,LaBraM (linear probe; in EEGPT paper),,Wang et al. (EEGPT),2024,https://papers.neurips.cc/paper_files/paper/2024/file/4540d267eeec4e5dbd9dae9448f0b739-Paper-Conference.pdf,linear probe (ours: full fine-tuning)
+BNCI2014_004,standard,kappa,0.60,,FBCSP + Naive Bayes Parzen (competition winner),,Chin et al.,2008,https://www.bbci.de/competition/iv/results/,
+BNCI2014_004,standard,accuracy,0.8048,,EEGNet (in EEG Conformer paper),EEGNet,Song et al.,2023,https://ieeexplore.ieee.org/document/9991178,
+BNCI2014_004,standard,accuracy,0.8463,,EEG Conformer,EEGConformer,Song et al.,2023,https://ieeexplore.ieee.org/document/9991178,best test-epoch selection in released code
+BNCI2014_004,standard,accuracy,0.8711,,TCFormer (no augmentation),TCFormer,Altaheri et al. (TCFormer),2025,https://github.com/Altaheri/TCFormer,
+Schirrmeister2017,standard,accuracy,0.939,,Shallow ConvNet (4-125 Hz),ShallowConvNet,Schirrmeister et al.,2017,https://arxiv.org/abs/1703.05051,ours uses 4-120 Hz at 250 Hz
+Schirrmeister2017,standard,accuracy,0.914,,Deep ConvNet (4-125 Hz),DeepConvNet,Schirrmeister et al.,2017,https://arxiv.org/abs/1703.05051,ours uses 4-120 Hz at 250 Hz
+Schirrmeister2017,standard,accuracy,0.9205,,ATCNet (ATCNet repo),ATCNet,Altaheri et al. (ATCNet),2023,https://github.com/Altaheri/EEG-ATCNet,validation split from training data
+PhysionetMI,cross_subject_fixed:1-70:90-109,balanced_accuracy,0.6417,,CBraMod (fine-tuned),CBraMod (fine-tuned),Wang et al. (CBraMod),2025,https://arxiv.org/abs/2412.07236,
+PhysionetMI,cross_subject_fixed:1-70:90-109,kappa,0.5222,,CBraMod (fine-tuned),CBraMod (fine-tuned),Wang et al. (CBraMod),2025,https://arxiv.org/abs/2412.07236,
+PhysionetMI,cross_subject_fixed:1-70:90-109,balanced_accuracy,0.6173,,LaBraM-Base (in CBraMod paper),LaBraM (fine-tuned),Wang et al. (CBraMod),2025,https://arxiv.org/abs/2412.07236,
+PhysionetMI,cross_subject_fixed:1-70:90-109,balanced_accuracy,0.5814,,EEGNet (in CBraMod paper),EEGNet,Wang et al. (CBraMod),2025,https://arxiv.org/abs/2412.07236,
+PhysionetMI,cross_subject_fixed:1-70:90-109,balanced_accuracy,0.6049,,EEG Conformer (in CBraMod paper),EEGConformer,Wang et al. (CBraMod),2025,https://arxiv.org/abs/2412.07236,
+Lee2019_MI,standard,accuracy,0.6785,,CSP + LDA (mean of sessions 1 and 2),CSP+LDA,Lee et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6501944/,
+Lee2019_MI,standard,accuracy,0.6965,,FBCSP + LDA (mean of sessions 1 and 2),,Lee et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6501944/,
+Cho2017,within_session:5,roc_auc,0.7138,,CSP+LDA (MOABB),CSP+LDA,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Cho2017,within_session:5,roc_auc,0.6339,,MDM (MOABB),MDM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Cho2017,within_session:5,roc_auc,0.7623,,TS+EL (MOABB),,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Cho2017,within_session:5,roc_auc,0.7384,,ShallowConvNet (MOABB),ShallowConvNet,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Cho2017,within_session:5,roc_auc,0.6679,,"EEGNet-8,2 (MOABB)",EEGNet,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BNCI2014_009,within_session:5,roc_auc,0.9343,,XDAWNCov+TS+SVM (MOABB),XDAWNCov+TS+SVM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BNCI2014_009,within_session:5,roc_auc,0.9204,,XDAWNCov+MDM (MOABB),XDAWNCov+MDM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BNCI2014_009,within_session:5,roc_auc,0.6403,,XDAWN+LDA (MOABB),XDAWN+LDA,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BI2013a,within_session:5,roc_auc,0.9271,,XDAWNCov+TS+SVM (MOABB),XDAWNCov+TS+SVM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BI2013a,within_session:5,roc_auc,0.9097,,XDAWNCov+MDM (MOABB),XDAWNCov+MDM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+BI2013a,within_session:5,roc_auc,0.7674,,XDAWN+LDA (MOABB),XDAWN+LDA,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Lee2019_ERP,within_session:5,roc_auc,0.9841,,XDAWNCov+TS+SVM (MOABB),XDAWNCov+TS+SVM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Lee2019_ERP,within_session:5,roc_auc,0.9770,,XDAWNCov+MDM (MOABB),XDAWNCov+MDM,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Lee2019_ERP,within_session:5,roc_auc,0.9645,,XDAWN+LDA (MOABB),XDAWN+LDA,Chevallier et al. (MOABB),2024,https://arxiv.org/abs/2404.15319,
+Nakanishi2015,within_session:15,accuracy,0.55,,Standard CCA (1 s),CCA,Nakanishi et al.,2015,https://pmc.ncbi.nlm.nih.gov/articles/PMC4610694/,leave-one-block-out (ours: stratified 15-fold)
+Nakanishi2015,within_session:15,accuracy,0.9278,,CCA + IT-CCA combination (1 s),,Nakanishi et al.,2015,https://pmc.ncbi.nlm.nih.gov/articles/PMC4610694/,leave-one-block-out (ours: stratified 15-fold)
+Lee2019_SSVEP,standard,accuracy,0.9515,,Multi-channel CCA (4 s; mean of sessions),CCA,Lee et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6501944/,paper scores all trials; ours scores test-phase trials
+NinaproDB5,"heldout_run:2,5",accuracy,0.903,,HVPN,,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,
+NinaproDB5,"heldout_run:2,5",accuracy,0.900,,MV-CNN (via HVPN),,Wei et al. (via HVPN),2019,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,
+NinaproDB5,"heldout_run:2,5",accuracy,0.6904,,SVM + mDWT (both Myos),,Pizzolato et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5638457/,
+NinaproDB5,cross_subject,accuracy,0.889,,HVPN (LOSO + MS-AdaBN),,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,uses test-subject adaptation (MS-AdaBN)
+SleepEDF-20 (EEG),cross_subject,accuracy,0.863,,XSleepNet2,,XSleepNet,2020,https://ar5iv.labs.arxiv.org/html/2007.05492,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EEG),cross_subject,kappa,0.813,,XSleepNet2,,XSleepNet,2020,https://ar5iv.labs.arxiv.org/html/2007.05492,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EEG),cross_subject,macro_f1,0.806,,XSleepNet2,,XSleepNet,2020,https://ar5iv.labs.arxiv.org/html/2007.05492,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EEG),cross_subject,accuracy,0.820,,DeepSleepNet,DeepSleepNet,Supratak et al. (via L-SeqSleepNet),2017,https://arxiv.org/html/2301.03441,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EEG+EOG),cross_subject,accuracy,0.864,,XSleepNet2,,XSleepNet,2020,https://ar5iv.labs.arxiv.org/html/2007.05492,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EEG+EOG),cross_subject,macro_f1,0.809,,XSleepNet2,,XSleepNet,2020,https://ar5iv.labs.arxiv.org/html/2007.05492,sequence model (ours: single 30-s epochs)
+SleepEDF-20 (EOG),cross_subject,accuracy,0.763,,EOGNet,,EOGNet (Frontiers in Neuroscience),2021,https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.573194/full,
+SleepEDF-20 (EOG),cross_subject,macro_f1,0.693,,EOGNet,,EOGNet (Frontiers in Neuroscience),2021,https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.573194/full,
+SleepEDF-20 (EOG),cross_subject,accuracy,0.7926,,SE-ResNet-Transformer,,Maiti et al.,2023,https://arxiv.org/html/2310.03757,split type not stated in the paper
+PTB-XL,standard,macro_auc,0.930,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL,standard,macro_auc,0.928,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL,standard,macro_auc,0.934,,Ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+TUAB,standard,balanced_accuracy,0.8140,0.0019,LaBraM-Base,LaBraM (fine-tuned),Jiang et al. (LaBraM),2024,https://arxiv.org/html/2405.18765,all windows (ours: first windows per recording)
+TUAB,standard,roc_auc,0.9022,0.0009,LaBraM-Base,LaBraM (fine-tuned),Jiang et al. (LaBraM),2024,https://arxiv.org/html/2405.18765,all windows (ours: first windows per recording)
+TUAB,standard,balanced_accuracy,0.8289,0.0022,CBraMod,CBraMod (fine-tuned),Wang et al. (CBraMod),2025,https://arxiv.org/html/2412.07236,16 bipolar channels and all windows (ours: 21 referential; first windows per recording)
+TUAB,standard,roc_auc,0.9227,0.0011,CBraMod,CBraMod (fine-tuned),Wang et al. (CBraMod),2025,https://arxiv.org/html/2412.07236,16 bipolar channels and all windows (ours: 21 referential; first windows per recording)
+TUAB,standard,balanced_accuracy,0.7983,0.0030,EEGPT,EEGPT (fine-tuned),Wang et al. (EEGPT),2024,https://papers.neurips.cc/paper_files/paper/2024/file/4540d267eeec4e5dbd9dae9448f0b739-Paper-Conference.pdf,linear probe; all windows
+TUAB,standard,balanced_accuracy,0.7642,0.0036,EEGNet (via CBraMod),EEGNet,Wang et al. (CBraMod),2025,https://arxiv.org/html/2412.07236,16 bipolar channels and all windows
+TUAB,standard,roc_auc,0.8412,0.0031,EEGNet (via CBraMod),EEGNet,Wang et al. (CBraMod),2025,https://arxiv.org/html/2412.07236,16 bipolar channels and all windows

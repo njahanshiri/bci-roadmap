@@ -15,6 +15,8 @@ Brain-computer interface projects, organized by type of brain data.
 
 [BENCHMARK_PLAN.md](BENCHMARK_PLAN.md): the plan for running baselines and state-of-the-art models on every open dataset here, and comparing the results honestly with published numbers.
 
+Scripts: [benchmarks/](benchmarks/). Run everything with `./benchmarks/run_all.sh` (try `--quick` first).
+
 ## Start
 
 ```bash

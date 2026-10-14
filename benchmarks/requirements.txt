@@ -1,0 +1,15 @@
+# Versions the benchmark scripts were tested with. Python 3.11 or 3.12 recommended.
+# torch: on Linux the PyPI wheel includes CUDA. For a specific CUDA build, set TORCH_INDEX_URL
+# before running run_all.sh (see https://pytorch.org/get-started/locally/).
+torch>=2.4
+moabb==1.7.2
+braindecode[hub]==1.8.1
+pyriemann==0.12
+mne==1.13.2
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.4
+scipy==1.18.1
+wfdb==4.3.1
+huggingface_hub==2.2.0
+safetensors==0.8.0
