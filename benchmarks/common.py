@@ -159,6 +159,14 @@ def splits(meta, y, protocol, seed=0):
             if te.any() and (~te).any():
                 yield "/".join(map(str, np.atleast_1d(key))), idx[m.index[~te]], idx[m.index[te]]
 
+    elif name == "leave_one_run_out":
+        # per subject and session, each run (repetition, trial) is the test set once: k-fold over runs
+        for (subj, sess), m in meta.groupby(["subject", "session"]):
+            for r in sorted(m.run.unique()):
+                te = m.run == r
+                if (~te).any():
+                    yield f"{subj}/{sess}/test={r}", idx[m.index[~te]], idx[m.index[te]]
+
     elif name == "cross_session":
         for subj, m in meta.groupby("subject"):
             if m.session.nunique() < 2:
@@ -410,3 +418,16 @@ def unzip(path, dest):
     with zipfile.ZipFile(path) as z:
         z.extractall(dest)
     return dest
+
+
+# ---------------------------------------------------------------- error-tolerant runner
+
+def _safe(fn, phase, results, dataset, protocol, model, *a, **kw):
+    try:
+        fn(phase, results, dataset, protocol, model, *a, **kw)
+    except NotApplicable as e:
+        print(f"  - {dataset} | {protocol} | {model}: not applicable ({e})")
+    except Exception as e:
+        log_error(phase, f"{dataset} | {protocol} | {model}: {type(e).__name__}: {e}")
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()

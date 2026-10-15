@@ -16,7 +16,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 
-from common import NotApplicable, classical, deep, evaluate, itr_bits_per_min, log_error
+from common import NotApplicable, _safe, classical, deep, evaluate, itr_bits_per_min, log_error
 
 warnings.filterwarnings("ignore")
 mne.set_log_level("ERROR")
@@ -355,14 +355,3 @@ def run_tuab(results, args):
             Xm, label = X, mname
         _safe(evaluate, "phase4", results, "TUAB", protocol, label, make, Xm, y, meta, args.seeds,
               extra=dict(note=f"{args.tuab_windows} windows/recording"))
-
-
-def _safe(fn, phase, results, dataset, protocol, model, *a, **kw):
-    try:
-        fn(phase, results, dataset, protocol, model, *a, **kw)
-    except NotApplicable as e:
-        print(f"  - {dataset} | {protocol} | {model}: not applicable ({e})")
-    except Exception as e:
-        log_error(phase, f"{dataset} | {protocol} | {model}: {type(e).__name__}: {e}")
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()

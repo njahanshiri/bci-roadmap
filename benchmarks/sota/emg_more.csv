@@ -1,0 +1,38 @@
+dataset,protocol,metric,value,std,model,our_model,paper,year,source,flags
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.7532,,"Random forest, combined features",,Atzori et al.,2014,https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935,50 movements (here 52 + rest); different features
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.6659,0.0640,Simple CNN,,Atzori et al.,2016,https://pmc.ncbi.nlm.nih.gov/articles/PMC5013051,"150-ms windows; about 2/3 of repetitions train, test repetitions may differ"
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.753,,CNN on instantaneous EMG images (28-frame vote),,Geng et al.,2016,https://pmc.ncbi.nlm.nih.gov/articles/PMC5109222/,majority vote over 28 frames (280 ms); about 2/3 of repetitions train
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.870,,Attention CNN-RNN,,Hu et al.,2018,https://pmc.ncbi.nlm.nih.gov/articles/PMC6207326,about 2/3 of repetitions train; test repetitions may differ
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.882,,MV-CNN (via HVPN),,Wei et al. (via HVPN),2019,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,second-hand number; test repetitions may differ
+NinaproDB1,"heldout_run:2,5,7",accuracy,0.884,,HVPN,,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,"repetitions 2, 5, 10 test (here 2, 5, 7)"
+NinaproDB1,cross_subject,accuracy,0.843,,"MV-CNN (LOSO + MS-AdaBN, via HVPN)",,Wei et al. (via HVPN),2019,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,uses test-subject adaptation (MS-AdaBN); LOSO (here GroupKFold 5)
+NinaproDB1,cross_subject,accuracy,0.849,,HVPN (LOSO + MS-AdaBN),,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,uses test-subject adaptation (MS-AdaBN); LOSO (here GroupKFold 5)
+NinaproDB2,"heldout_run:2,5",accuracy,0.7527,,Random forest,,Atzori et al.,2014,https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935,different features
+NinaproDB2,"heldout_run:2,5",accuracy,0.6027,0.077,Simple CNN,,Atzori et al.,2016,https://pmc.ncbi.nlm.nih.gov/articles/PMC5013051,150-ms windows
+NinaproDB2,"heldout_run:2,5",accuracy,0.822,,Attention CNN-RNN,,Hu et al.,2018,https://pmc.ncbi.nlm.nih.gov/articles/PMC6207326,
+NinaproDB2,"heldout_run:2,5",accuracy,0.8370,,MV-CNN (via TraHGR),,Wei et al. (via TraHGR),2019,https://arxiv.org/abs/2203.16336,second-hand number
+NinaproDB2,"heldout_run:2,5",accuracy,0.858,,HVPN,,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,
+NinaproDB2,"heldout_run:2,5",accuracy,0.8618,0.0499,TraHGR (transformer + CNN hybrid),,Zabihi et al. (TraHGR),2022,https://arxiv.org/abs/2203.16336,
+NinaproDB2,cross_subject,accuracy,0.801,,"MV-CNN (LOSO + MS-AdaBN, via HVPN)",,Wei et al. (via HVPN),2019,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,uses test-subject adaptation (MS-AdaBN); LOSO (here GroupKFold 5)
+NinaproDB2,cross_subject,accuracy,0.820,,HVPN (LOSO + MS-AdaBN),,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,uses test-subject adaptation (MS-AdaBN); LOSO (here GroupKFold 5)
+NinaproDB3,"heldout_run:2,5",accuracy,0.4627,,SVM,,Atzori et al.,2014,https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935,different features
+NinaproDB3,"heldout_run:2,5",accuracy,0.3809,0.1429,Simple CNN,,Atzori et al.,2016,https://pmc.ncbi.nlm.nih.gov/articles/PMC5013051,150-ms windows
+NinaproDB3,"heldout_run:2,5",accuracy,0.643,,MV-CNN (via HVPN),,Wei et al. (via HVPN),2019,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,second-hand number
+NinaproDB3,"heldout_run:2,5",accuracy,0.682,,HVPN,,Wei et al. (HVPN),2021,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413066/,
+NinaproDB7,leave_one_run_out,balanced_accuracy,0.601,,"LDA, EMG only",,Krasoulis et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/,median over subjects and folds (report uses mean); paper lists 40 classes and removed most rest windows from test folds (here 40 movements + rest); different features
+NinaproDB7-amputee,leave_one_run_out,balanced_accuracy,0.407,,"LDA, EMG only",,Krasoulis et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5505040/,median over subjects and folds (report uses mean); paper lists 40 classes and removed most rest windows from test folds (here 40 movements + rest); different features
+CapgMyo-DBa,"heldout_run:2,4,6,8,10",accuracy,0.995,,CNN on instantaneous HD-EMG images (150-frame vote),,Geng et al.,2016,https://pmc.ncbi.nlm.nih.gov/articles/PMC5109222/,majority vote over 150 single-frame predictions (here one prediction per 150-ms window)
+CapgMyo-DBa,"heldout_run:2,4,6,8,10",accuracy,0.997,,Attention CNN-RNN,,Hu et al.,2018,https://pmc.ncbi.nlm.nih.gov/articles/PMC6207326,half of trials train (which half not stated in DATASETS.md)
+CapgMyo-DBb,"heldout_run:2,4,6,8,10",accuracy,0.986,,CNN,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window); trial split not stated in DATASETS.md
+CapgMyo-DBb,heldout_session:2,accuracy,0.479,,CNN without adaptation,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window)
+CapgMyo-DBb,heldout_session:2,accuracy,0.633,,CNN with multi-stream AdaBN,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window); uses test-session adaptation
+CapgMyo-DBb,cross_subject,accuracy,0.390,,CNN without adaptation,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window)
+CapgMyo-DBb,cross_subject,accuracy,0.553,,CNN with multi-stream AdaBN,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window); uses test-subject adaptation
+CapgMyo-DBc,"heldout_run:2,4,6,8,10",accuracy,0.992,,CNN,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window); trial split not stated in DATASETS.md
+CapgMyo-DBc,cross_subject,accuracy,0.263,,CNN without adaptation,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window)
+CapgMyo-DBc,cross_subject,accuracy,0.351,,CNN with multi-stream AdaBN,,Du et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5375744,majority vote over 150 single-frame predictions (here one prediction per 150-ms window); uses test-subject adaptation
+CSL-HDEMG,leave_one_run_out,accuracy,0.945,,Attention CNN-RNN,,Hu et al.,2018,https://pmc.ncbi.nlm.nih.gov/articles/PMC6207326,
+HyserPR-dynamic,leave_one_run_out,accuracy,0.9686,0.0249,PCA + LDA,,Jiang et al.,2021,https://physionet.org/files/hd-semg/1.0.0/manuscript_author_version.pdf,RMS/WL/ZC/SSC + PCA features (here MAV/WL/ZC/SSC); our GridCNN rows use 6 folds over repetitions
+HyserPR-maintenance,leave_one_run_out,accuracy,0.9380,0.0380,PCA + LDA,,Jiang et al.,2021,https://physionet.org/files/hd-semg/1.0.0/manuscript_author_version.pdf,RMS/WL/ZC/SSC + PCA features (here MAV/WL/ZC/SSC); our GridCNN rows use 2 folds over repetitions
+EMG-EPN-612,cross_subject_fixed:1-306:1001-1306,accuracy,0.9049,0.097,Best supervised model,,Benalcázar et al.,2023,https://redi.cedia.edu.ec/document/4570,classification accuracy; our test set is the labelled samples of the 306 testing users (their official test labels are hidden)
+putEMG,leave_one_run_out,accuracy,0.90,,SVM + RMS; LDA + Hudgins; LDA + Du features,Hudgins+LDA,Kaczmarek et al.,2019,https://ar5iv.labs.arxiv.org/html/1907.07428,approximate: 'about 90%' for the best three classifier and feature sets

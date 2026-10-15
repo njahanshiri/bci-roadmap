@@ -1,0 +1,131 @@
+dataset,protocol,metric,value,std,model,our_model,paper,year,source,flags
+MITBIH,standard,sveb_se,0.759,,Linear discriminants on morphology and RR features,,de Chazal et al.,2004,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15248536&rettype=abstract&retmode=text,
+MITBIH,standard,sveb_ppv,0.385,,Linear discriminants on morphology and RR features,,de Chazal et al.,2004,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15248536&rettype=abstract&retmode=text,
+MITBIH,standard,veb_se,0.777,,Linear discriminants on morphology and RR features,,de Chazal et al.,2004,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15248536&rettype=abstract&retmode=text,
+MITBIH,standard,veb_ppv,0.819,,Linear discriminants on morphology and RR features,,de Chazal et al.,2004,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15248536&rettype=abstract&retmode=text,
+MITBIH,standard,accuracy,0.93,,"Wavelet/RR features, LDA",,Llamedo & Martinez,2010,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text,
+MITBIH,standard,sveb_se,0.77,,"Wavelet/RR features, LDA",,Llamedo & Martinez,2010,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text,
+MITBIH,standard,sveb_ppv,0.39,,"Wavelet/RR features, LDA",,Llamedo & Martinez,2010,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text,
+MITBIH,standard,veb_se,0.81,,"Wavelet/RR features, LDA",,Llamedo & Martinez,2010,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text,
+MITBIH,standard,veb_ppv,0.87,,"Wavelet/RR features, LDA",,Llamedo & Martinez,2010,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21096269&rettype=abstract&retmode=text,
+MITBIH,standard,accuracy,0.924,,Vectorcardiogram + complex networks + SVM,,Garcia et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/,3 classes (N/S/V)
+MITBIH,standard,sveb_se,0.62,,Vectorcardiogram + complex networks + SVM,,Garcia et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/,3 classes (N/S/V)
+MITBIH,standard,sveb_ppv,0.53,,Vectorcardiogram + complex networks + SVM,,Garcia et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/,3 classes (N/S/V)
+MITBIH,standard,veb_se,0.873,,Vectorcardiogram + complex networks + SVM,,Garcia et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/,3 classes (N/S/V)
+MITBIH,standard,veb_ppv,0.594,,Vectorcardiogram + complex networks + SVM,,Garcia et al.,2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC5585360/,3 classes (N/S/V)
+MITBIH,standard,accuracy,0.945,,SVM ensemble,,Mondejar-Guerra et al.,2019,https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download,4 classes (Q excluded)
+MITBIH,standard,sveb_se,0.781,,SVM ensemble,,Mondejar-Guerra et al.,2019,https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download,4 classes (Q excluded)
+MITBIH,standard,sveb_ppv,0.497,,SVM ensemble,,Mondejar-Guerra et al.,2019,https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download,4 classes (Q excluded)
+MITBIH,standard,veb_se,0.947,,SVM ensemble,,Mondejar-Guerra et al.,2019,https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download,4 classes (Q excluded)
+MITBIH,standard,veb_ppv,0.939,,SVM ensemble,,Mondejar-Guerra et al.,2019,https://ruc.udc.es/bitstreams/27ee7d17-9c5e-41d6-903f-85801556010c/download,4 classes (Q excluded)
+MITBIH,standard,accuracy,0.947,,Adversarial CNN + RR features,,Zhang et al.,2021,https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/,
+MITBIH,standard,sveb_se,0.788,,Adversarial CNN + RR features,,Zhang et al.,2021,https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/,
+MITBIH,standard,sveb_ppv,0.908,,Adversarial CNN + RR features,,Zhang et al.,2021,https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/,
+MITBIH,standard,veb_se,0.925,,Adversarial CNN + RR features,,Zhang et al.,2021,https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/,
+MITBIH,standard,veb_ppv,0.943,,Adversarial CNN + RR features,,Zhang et al.,2021,https://pmc.ncbi.nlm.nih.gov/articles/PMC8181174/,
+MITBIH,within_session:5,accuracy,0.934,,Residual CNN,,Kachuee et al.,2018,https://arxiv.org/pdf/1805.00794,"intra-patient leakage; single random beat split (4,079 test beats); 'average accuracy'"
+MITBIH,within_session:5,accuracy,0.8907,,9-layer CNN (trained on imbalanced data),,Acharya et al.,2017,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=28869899&rettype=abstract&retmode=text,intra-patient leakage; random beat split
+MITBIH,within_session:5,accuracy,0.9403,,9-layer CNN (augmented to balance),,Acharya et al.,2017,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=28869899&rettype=abstract&retmode=text,intra-patient leakage; augmentation possibly before the split
+CinC2017,within_session:5,cinc2017_f1,0.831,,Challenge entry,,Teijeiro et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_normal,0.903,,Challenge entry,,Teijeiro et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_af,0.855,,Challenge entry,,Teijeiro et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_other,0.737,,Challenge entry,,Teijeiro et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,cinc2017_f1,0.829,,Challenge entry,,Datta et al. (TCS),2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_normal,0.916,,Challenge entry,,Datta et al. (TCS),2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_af,0.823,,Challenge entry,,Datta et al. (TCS),2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_other,0.75,,Challenge entry,,Datta et al. (TCS),2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,cinc2017_f1,0.826,,Challenge entry,,"Zabihi, Bahrami Rad et al.",2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_normal,0.909,,Challenge entry,,"Zabihi, Bahrami Rad et al.",2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_af,0.835,,Challenge entry,,"Zabihi, Bahrami Rad et al.",2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_other,0.734,,Challenge entry,,"Zabihi, Bahrami Rad et al.",2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,cinc2017_f1,0.825,,Challenge entry,,Hong et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_normal,0.912,,Challenge entry,,Hong et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_af,0.813,,Challenge entry,,Hong et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,f1_other,0.751,,Challenge entry,,Hong et al.,2017,https://physionet.org/files/challenge-2017/1.0.0/results_all_F1_scores_for_each_classification_type.csv,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set"
+CinC2017,within_session:5,cinc2017_f1,0.83,,Deep CNN,,Hannun et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6784839/,"official hidden test (3,658 records); ours: stratified 5-fold CV on the public training set; post-challenge, not an official entry"
+PTB-XL-all,standard,macro_auc,0.925,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.937,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.929,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.896,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.957,,xresnet1d101,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.925,,inception1d,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.931,,inception1d,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.93,,inception1d,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.899,,inception1d,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.953,,inception1d,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.919,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.936,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.928,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.88,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.946,,resnet1d_wang,ResNet1D,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.918,,fcn_wang,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.926,,fcn_wang,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.927,,fcn_wang,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.869,,fcn_wang,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.931,,fcn_wang,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.914,,lstm_bidir,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.932,,lstm_bidir,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.923,,lstm_bidir,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.876,,lstm_bidir,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.949,,lstm_bidir,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.907,,lstm,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.927,,lstm,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.928,,lstm,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.851,,lstm,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.953,,lstm,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.849,,Wavelet+NN,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-diag,standard,macro_auc,0.855,,Wavelet+NN,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-subdiag,standard,macro_auc,0.859,,Wavelet+NN,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-form,standard,macro_auc,0.757,,Wavelet+NN,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-rhythm,standard,macro_auc,0.89,,Wavelet+NN,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,
+PTB-XL-all,standard,macro_auc,0.929,,ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+PTB-XL-diag,standard,macro_auc,0.939,,ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+PTB-XL-subdiag,standard,macro_auc,0.933,,ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+PTB-XL-form,standard,macro_auc,0.907,,ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+PTB-XL-rhythm,standard,macro_auc,0.965,,ensemble,,Strodthoff et al.,2021,https://arxiv.org/pdf/2004.13701,ensemble of models
+PTB-XL-all,standard,macro_auc,0.9318,,"4FC+2LSTM+2FC, supervised",,Mehari & Strodthoff,2022,https://arxiv.org/pdf/2103.12676,
+PTB-XL-all,standard,macro_auc,0.9395,,"CPC pretrained on PTB-XL, fine-tuned",,Mehari & Strodthoff,2022,https://arxiv.org/pdf/2103.12676,self-supervised pretraining; mean of 10 runs
+PTB-XL-all,standard,macro_auc,0.9418,,"CPC pretrained on 'All', fine-tuned",,Mehari & Strodthoff,2022,https://arxiv.org/pdf/2103.12676,"pretraining data includes CinC 2020, which contains the PTB-XL test fold; mean of 10 runs"
+PTB-XL-all,standard,macro_auc,0.9417,,"S4, supervised",,Mehari & Strodthoff,2023,https://arxiv.org/pdf/2308.15291,
+PTB-XL-all,standard,macro_auc,0.9445,,S4 + CPC pretraining (All2021),,Mehari & Strodthoff,2023,https://arxiv.org/pdf/2308.15291,"pretraining data includes CinC 2021, which contains PTB-XL"
+PTB-XL-all,standard,macro_auc,0.9463,,S4 + patient metadata,,Mehari & Strodthoff,2023,https://arxiv.org/pdf/2308.15291,uses patient metadata; All2021 pretraining contains PTB-XL
+CinC2021,cross_session,challenge_score,0.58,,Challenge entry (12-lead),,ISIBrno-AIMT,2021,https://moody-challenge.physionet.org/2021/results/2021_Challenge_Test_Results_Leaderboard_For_Official_Entries-12-lead.csv,"official hidden test (12-lead; CPSC, G12EC, Undisclosed, UMich); ours: leave-one-source-out over 5 public sources"
+CinC2021,cross_session,challenge_score,0.55,,"Challenge entry (12-lead, tied 2nd)",,NIMA; DSAIL_SNU; cardiochallenger,2021,https://moody-challenge.physionet.org/2021/results/2021_Challenge_Test_Results_Leaderboard_For_Official_Entries-12-lead.csv,"official hidden test (12-lead; CPSC, G12EC, Undisclosed, UMich); ours: leave-one-source-out over 5 public sources"
+CODE-test,standard,f1_1dAVb,0.897,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,f1_RBBB,0.944,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,f1_LBBB,1.0,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,f1_SB,0.882,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,f1_AF,0.87,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,f1_ST,0.96,,DNN (residual CNN),,Ribeiro et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7145824/,"threshold chosen at max F1 on the test set; trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,macro_auc,0.98,,S12L-ECG (Ribeiro's DNN),,Ribeiro et al. (as reported in ECGFounder),2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC12327759/,"trained on full CODE (2.3M exams), ours on CODE-15%"
+CODE-test,standard,macro_auc,0.981,,ECGFounder,,ECGFounder (NEJM AI),2025,https://pmc.ncbi.nlm.nih.gov/articles/PMC12327759/,foundation model trained on HEEDB; external test
+ApneaECG,standard,accuracy,0.9262,,Challenge entry,,"McNames, Fraser, Rechtsteiner",2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.923,,Challenge entry,,"Raymond, Cayton, Bates, Chappell",2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.8936,,Challenge entry,,"de Chazal, Heneghan et al.",2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.8756,,Challenge entry,,Schrader et al.,2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.873,,Challenge entry,,Jarvis & Mitra,2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.8563,,Challenge entry,,Shinar et al.,2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.8554,,Challenge entry,,Maier et al.,2000,https://physionet.org/content/challenge-2000/1.0.0/,"challenge scored 17,268 minutes; ours: all labelled test minutes"
+ApneaECG,standard,accuracy,0.876,,Modified LeNet-5 with adjacent segments,,Wang et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6756143/,
+ApneaECG,standard,sensitivity,0.831,,Modified LeNet-5 with adjacent segments,,Wang et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6756143/,
+ApneaECG,standard,specificity,0.903,,Modified LeNet-5 with adjacent segments,,Wang et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6756143/,
+ApneaECG,standard,roc_auc,0.95,,Modified LeNet-5 with adjacent segments,,Wang et al.,2019,https://pmc.ncbi.nlm.nih.gov/articles/PMC6756143/,
+ApneaECG,standard,accuracy,0.879,,1-D CNN,,Chang et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7435835,"best of 10 runs, selected on the withheld set"
+ApneaECG,standard,sensitivity,0.811,,1-D CNN,,Chang et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7435835,"best of 10 runs, selected on the withheld set"
+ApneaECG,standard,specificity,0.92,,1-D CNN,,Chang et al.,2020,https://pmc.ncbi.nlm.nih.gov/articles/PMC7435835,"best of 10 runs, selected on the withheld set"
+WESAD-binary,cross_subject,accuracy,0.8544,,LDA on ECG features,Features+LDA,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,different feature set
+WESAD-binary,cross_subject,macro_f1,0.8131,,LDA on ECG features,Features+LDA,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,different feature set
+WESAD-binary,cross_subject,accuracy,0.8278,,Random forest on ECG features,,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,
+WESAD-binary,cross_subject,accuracy,0.804,,"Transformer, untuned",,Behinaein et al.,2021,https://ar5iv.labs.arxiv.org/html/2108.09737,30-s windows
+WESAD-binary,cross_subject,accuracy,0.908,,Deep ECGNet,,Prajod & Andre,2022,https://arxiv.org/pdf/2210.06225,10-s windows at 256 Hz
+WESAD-binary,cross_subject,macro_f1,0.857,,Deep ECGNet,,Prajod & Andre,2022,https://arxiv.org/pdf/2210.06225,10-s windows at 256 Hz
+WESAD-binary,cross_subject,accuracy,0.895,,MLP on HRV,,Prajod & Andre,2022,https://arxiv.org/pdf/2210.06225,
+WESAD-binary,cross_subject,accuracy,0.871,,SVM on HRV,,Prajod & Andre,2022,https://arxiv.org/pdf/2210.06225,
+WESAD-binary,cross_subject,accuracy,0.883,,ViT on spectrograms,,Ahmad & Khan,2026,https://arxiv.org/html/2603.26721,preprint; 1-s segments
+WESAD-3class,cross_subject,accuracy,0.6629,,LDA on ECG features,Features+LDA,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,different feature set
+WESAD-3class,cross_subject,macro_f1,0.5603,,LDA on ECG features,Features+LDA,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,different feature set
+WESAD-3class,cross_subject,accuracy,0.6171,,AdaBoost on ECG features,,Schmidt et al.,2018,https://www.eti.uni-siegen.de/ubicomp/papers/ubi_icmi2018.pdf,
+WESAD-3class,cross_subject,accuracy,0.767,,ViT on spectrograms,,Ahmad & Khan,2026,https://arxiv.org/html/2603.26721,preprint; 1-s segments
+Chagas2025,standard,chagas_score,0.323,,Challenge entry,,Biomed-Cardio,2025,https://moody-challenge.physionet.org/2025/results/challenge_2025_results.tsv,"official hidden test (mean of REDS-II, SaMi-Trop 3, ELSA-Brasil); ours: patient-disjoint hold-out of the public training data"
+Chagas2025,standard,chagas_score,0.283,,Challenge entry,,DlaskaLabMUI,2025,https://moody-challenge.physionet.org/2025/results/challenge_2025_results.tsv,"official hidden test (mean of REDS-II, SaMi-Trop 3, ELSA-Brasil); ours: patient-disjoint hold-out of the public training data"
+Chagas2025,standard,chagas_score,0.28,,Challenge entry,,AIChagas,2025,https://moody-challenge.physionet.org/2025/results/challenge_2025_results.tsv,"official hidden test (mean of REDS-II, SaMi-Trop 3, ELSA-Brasil); ours: patient-disjoint hold-out of the public training data"

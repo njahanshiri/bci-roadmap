@@ -12,7 +12,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer
 
 from common import classical, deep, download, evaluate, log_error, resnet1d, unzip
-from eeg import _safe, braindecode_builder
+from common import _safe
+from eeg import braindecode_builder
 
 # ------------------------------------------------------------------ Sleep-EDF-20
 
@@ -85,6 +86,9 @@ def run_sleep(results, args):
               needs_seed=False)
         for mname, train in SLEEP_DEEP.items():
             if args.models and mname not in args.models:
+                continue
+            if mname == "AttnSleep" and len(chans) > 1:
+                print(f"  - {dname} | {mname}: not applicable (single-channel model)")
                 continue
             make = deep(braindecode_builder(mname, 100), epochs=min(args.epochs, 50), batch_size=128, **train)
             _safe(evaluate, "phase5", results, dname, protocol, mname, make, Xi, y, meta, args.seeds)

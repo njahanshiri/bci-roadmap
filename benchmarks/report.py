@@ -8,6 +8,12 @@ import pandas as pd
 ROOT = Path(__file__).parent
 
 
+LOWER_IS_BETTER = {"rrmse_t", "rrmse_s", "rmse", "mae", "mse", "cer", "wer", "mcd", "kl_divergence",
+                   "fa_per_24h", "fp_per_h", "angle_error", "landmark_error", "eer",
+                   "euclidean_distance", "szcore_fp_per_24h", "nrmse", "tp_corr", "cler",
+                   "fingertip_error"}
+
+
 def fold_means(res):
     """Mean over seeds for each fold, so the bootstrap resamples folds (subjects), not seeds."""
     return res.groupby(["dataset", "protocol", "model", "metric", "fold"], as_index=False)["value"].mean()
@@ -37,14 +43,17 @@ def compare(res, sota):
         if ours.empty:
             continue
         by_model = ours.groupby("model")["value"]
-        model = s.our_model if isinstance(s.our_model, str) and s.our_model in by_model.groups else by_model.mean().idxmax()
+        lower = s.metric in LOWER_IS_BETTER
+        best = by_model.mean().idxmin() if lower else by_model.mean().idxmax()
+        model = s.our_model if isinstance(s.our_model, str) and s.our_model in by_model.groups else best
         vals = by_model.get_group(model).values
         mean, (lo, hi) = vals.mean(), bootstrap_ci(vals)
-        status = "within CI" if lo <= s.value <= hi else ("above SOTA" if lo > s.value else "below SOTA")
+        higher = lo > s.value
+        status = "within CI" if lo <= s.value <= hi else ("better than SOTA" if higher != lower else "worse than SOTA")
         rows.append(dict(dataset=s.dataset, protocol=s.protocol, metric=s.metric, sota_model=s.model,
                          sota=s.value, our_model=model, matched="same model" if model == s.our_model else "our best",
                          ours=round(mean, 4), ci=f"[{lo:.3f}, {hi:.3f}]", gap=round(mean - s.value, 4), status=status,
-                         sota_flags=s.flags if isinstance(s.flags, str) else ""))
+                         sota_flags=s["flags"] if isinstance(s["flags"], str) else ""))
     return pd.DataFrame(rows)
 
 
@@ -64,13 +73,15 @@ def main(results_csv, out_md):
         print(f"no results at {results_csv}")
         return
     res = pd.read_csv(results_csv).dropna(subset=["value"])
-    sota = pd.read_csv(ROOT / "sota.csv")
+    sota = pd.concat([pd.read_csv(f) for f in [ROOT / "sota.csv", *sorted((ROOT / "sota").glob("*.csv"))]],
+                     ignore_index=True)
     summ = summarize(res)
     comp = compare(res, sota)
     parts = [f"# Benchmark summary\n\nResults: `{results_csv.name}` ({len(res)} rows). "
              "Values are fractions (0.85 = 85%). Our numbers: mean over folds, then mean ± std over seeds.\n",
              "## Comparison with published results\n",
-             "Status uses a 95% bootstrap confidence interval over folds (subjects). "
+             "Status uses a 95% bootstrap confidence interval over folds (subjects); for error metrics "
+             "(RRMSE, RMSE, MAE, CER, WER, ...) lower is better. "
              "`same model` compares like with like; `our best` compares our best model with the published number. "
              "Read `sota_flags` before drawing conclusions.\n",
              to_md(comp) if not comp.empty else "_No overlapping dataset/protocol/metric yet._", ""]

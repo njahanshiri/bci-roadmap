@@ -1,0 +1,4 @@
+# Installed with --no-deps: these packages pin old pandas/numpy versions that would break the
+# main environment. benchmarks/spikes.py patches the small incompatibilities at run time.
+nlb_tools==0.0.4
+falcon-challenge==1.0.2

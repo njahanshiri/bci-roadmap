@@ -23,6 +23,7 @@ if [ ! -x .venv/bin/python ]; then
     .venv/bin/pip install -q torch --index-url "$TORCH_INDEX_URL"
   fi
   .venv/bin/pip install -q -r requirements.txt
+  .venv/bin/pip install -q --no-deps -r requirements-nodeps.txt
 fi
 
 .venv/bin/python - <<'EOF'

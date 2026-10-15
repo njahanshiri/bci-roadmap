@@ -12,7 +12,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from common import classical, deep, download, evaluate, log_error, resnet1d, unzip
-from eeg import _safe
+from common import _safe
 
 EMG_DEEP_TRAIN = dict(lr=1e-3, weight_decay=1e-4)
 
